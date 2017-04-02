@@ -9,3 +9,6 @@ C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take a Break v2\Ta
 C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take a Break v2\Take a Break v2\obj\Debug\Take a Break v2.pdb
 C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take a Break v2\Take a Break v2\obj\Debug\Take_a_Break_v2.MainForm.resources
 C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take a Break v2\Take a Break v2\obj\Debug\Take_a_Break_v2.SettingsForm.resources
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take-a-Break-v2\Take a Break v2\Take a Break v2\bin\Debug\Take a Break v2.exe.config
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take-a-Break-v2\Take a Break v2\Take a Break v2\obj\Debug\Take a Break v2.exe
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take-a-Break-v2\Take a Break v2\Take a Break v2\obj\Debug\Take a Break v2.pdb

@@ -126,7 +126,6 @@
             this.button1.Size = new System.Drawing.Size(85, 85);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
@@ -138,7 +137,6 @@
             this.label1.Size = new System.Drawing.Size(81, 18);
             this.label1.TabIndex = 4;
             this.label1.Text = "Break Types";
-            this.label1.Visible = false;
             // 
             // label2
             // 
