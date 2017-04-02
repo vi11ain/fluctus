@@ -1,0 +1,11 @@
+c:\users\yuval gal\documents\visual studio 2015\Projects\Take a Break v2\Take a Break v2\bin\Debug\Take a Break v2.exe.config
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take a Break v2\Take a Break v2\bin\Debug\Take a Break v2.exe.config
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take a Break v2\Take a Break v2\bin\Debug\Take a Break v2.exe
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take a Break v2\Take a Break v2\bin\Debug\Take a Break v2.pdb
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take a Break v2\Take a Break v2\obj\Debug\Take a Break v2.csprojResolveAssemblyReference.cache
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take a Break v2\Take a Break v2\obj\Debug\Take_a_Break_v2.Properties.Resources.resources
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take a Break v2\Take a Break v2\obj\Debug\Take a Break v2.csproj.GenerateResource.Cache
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take a Break v2\Take a Break v2\obj\Debug\Take a Break v2.exe
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take a Break v2\Take a Break v2\obj\Debug\Take a Break v2.pdb
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take a Break v2\Take a Break v2\obj\Debug\Take_a_Break_v2.MainForm.resources
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take a Break v2\Take a Break v2\obj\Debug\Take_a_Break_v2.SettingsForm.resources
