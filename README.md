@@ -1,5 +1,5 @@
-# Take-a-Break-v2
-Make you take a break in periods of times recommended for IT people.
+# Take a Break v2
+**Make you take a break in periods of times recommended for IT people :computer:**
 ## The breaks:sleeping:
 1. Every time the minute counter hits 30 mins = A 1 minute break to walk around you'r workspace and relieve strain on your back :runner:
 
