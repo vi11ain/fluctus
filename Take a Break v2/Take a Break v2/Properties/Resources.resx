@@ -118,19 +118,37 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="settings-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dialled-nimbers-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dialled-nimbers-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="deezer-2-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\deezer-2-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="no-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\no-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zootopia_Party_Alert_emoticon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zootopia_Party_Alert_emoticon.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="calendar-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendar-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cinemagram-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cinemagram-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Israel-c503417b5198a423c3bed2af5c585ede" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Israel-c503417b5198a423c3bed2af5c585ede.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deezer-2-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deezer-2-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clock-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clock-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="USA-b1015c333a0a2633440d4bc906e23fda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\USA-b1015c333a0a2633440d4bc906e23fda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="navigation-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\navigation-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Zootopia_Party_Alert_emoticon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Zootopia_Party_Alert_emoticon.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

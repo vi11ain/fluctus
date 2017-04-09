@@ -37,24 +37,20 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.h_lbl = new System.Windows.Forms.Label();
-            this.m_lbl = new System.Windows.Forms.Label();
-            this.h2_lbl = new System.Windows.Forms.Label();
-            this.m2_lbl = new System.Windows.Forms.Label();
-            this.s2_lbl = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.s_lbl = new System.Windows.Forms.Label();
+            this.time2_lbl = new System.Windows.Forms.Label();
+            this.counter = new System.Windows.Forms.Timer(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.finish_btn = new System.Windows.Forms.Button();
+            this.breaktime_lbl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.sep_lbl = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.prog = new System.Windows.Forms.Timer(this.components);
+            this.reverseprog = new System.Windows.Forms.Timer(this.components);
+            this.time_lbl = new System.Windows.Forms.Label();
             this.alarm_img = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alarm_img)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -77,6 +73,7 @@
             // 
             // openToolStripMenuItem
             // 
+            this.openToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.dialled_nimbers_icon;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.openToolStripMenuItem.Text = "Open";
@@ -84,6 +81,7 @@
             // 
             // settingsToolStripMenuItem
             // 
+            this.settingsToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.settings_icon;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -91,12 +89,15 @@
             // 
             // aboutToolStripMenuItem
             // 
+            this.aboutToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.navigation_icon;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.no_icon;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.exitToolStripMenuItem.Text = "Exit";
@@ -112,92 +113,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Time passed using the computer:";
             // 
-            // h_lbl
+            // time2_lbl
             // 
-            this.h_lbl.AutoSize = true;
-            this.h_lbl.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.h_lbl.Location = new System.Drawing.Point(119, 43);
-            this.h_lbl.Name = "h_lbl";
-            this.h_lbl.Size = new System.Drawing.Size(49, 59);
-            this.h_lbl.TabIndex = 1;
-            this.h_lbl.Text = "0";
+            this.time2_lbl.AutoSize = true;
+            this.time2_lbl.Font = new System.Drawing.Font("Calibri", 50F);
+            this.time2_lbl.Location = new System.Drawing.Point(121, 32);
+            this.time2_lbl.Name = "time2_lbl";
+            this.time2_lbl.Size = new System.Drawing.Size(69, 82);
+            this.time2_lbl.TabIndex = 3;
+            this.time2_lbl.Text = "0";
+            this.time2_lbl.Visible = false;
             // 
-            // m_lbl
+            // counter
             // 
-            this.m_lbl.AutoSize = true;
-            this.m_lbl.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.m_lbl.Location = new System.Drawing.Point(225, 43);
-            this.m_lbl.Name = "m_lbl";
-            this.m_lbl.Size = new System.Drawing.Size(49, 59);
-            this.m_lbl.TabIndex = 2;
-            this.m_lbl.Text = "0";
-            // 
-            // h2_lbl
-            // 
-            this.h2_lbl.AutoSize = true;
-            this.h2_lbl.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.h2_lbl.Location = new System.Drawing.Point(81, 43);
-            this.h2_lbl.Name = "h2_lbl";
-            this.h2_lbl.Size = new System.Drawing.Size(49, 59);
-            this.h2_lbl.TabIndex = 3;
-            this.h2_lbl.Text = "0";
-            // 
-            // m2_lbl
-            // 
-            this.m2_lbl.AutoSize = true;
-            this.m2_lbl.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.m2_lbl.Location = new System.Drawing.Point(187, 43);
-            this.m2_lbl.Name = "m2_lbl";
-            this.m2_lbl.Size = new System.Drawing.Size(49, 59);
-            this.m2_lbl.TabIndex = 4;
-            this.m2_lbl.Text = "0";
-            // 
-            // s2_lbl
-            // 
-            this.s2_lbl.AutoSize = true;
-            this.s2_lbl.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.s2_lbl.Location = new System.Drawing.Point(287, 43);
-            this.s2_lbl.Name = "s2_lbl";
-            this.s2_lbl.Size = new System.Drawing.Size(49, 59);
-            this.s2_lbl.TabIndex = 6;
-            this.s2_lbl.Text = "0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label2.Location = new System.Drawing.Point(160, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 59);
-            this.label2.TabIndex = 7;
-            this.label2.Tag = "";
-            this.label2.Text = ":";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.Location = new System.Drawing.Point(259, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 59);
-            this.label3.TabIndex = 8;
-            this.label3.Tag = "";
-            this.label3.Text = ":";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // s_lbl
-            // 
-            this.s_lbl.AutoSize = true;
-            this.s_lbl.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.s_lbl.Location = new System.Drawing.Point(326, 43);
-            this.s_lbl.Name = "s_lbl";
-            this.s_lbl.Size = new System.Drawing.Size(49, 59);
-            this.s_lbl.TabIndex = 5;
-            this.s_lbl.Text = "0";
+            this.counter.Enabled = true;
+            this.counter.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // progressBar1
             // 
@@ -214,6 +144,72 @@
             this.finish_btn.TabIndex = 12;
             this.finish_btn.Text = "Finish Break";
             this.finish_btn.UseVisualStyleBackColor = true;
+            this.finish_btn.Click += new System.EventHandler(this.finish_btn_Click);
+            // 
+            // breaktime_lbl
+            // 
+            this.breaktime_lbl.AutoSize = true;
+            this.breaktime_lbl.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.breaktime_lbl.Location = new System.Drawing.Point(68, 42);
+            this.breaktime_lbl.Name = "breaktime_lbl";
+            this.breaktime_lbl.Size = new System.Drawing.Size(49, 59);
+            this.breaktime_lbl.TabIndex = 14;
+            this.breaktime_lbl.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri Light", 14.25F);
+            this.label2.Location = new System.Drawing.Point(205, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(236, 46);
+            this.label2.TabIndex = 15;
+            this.label2.Tag = "";
+            this.label2.Text = "Have a break for one minute,\r\n walk around you\'r workspace";
+            // 
+            // sep_lbl
+            // 
+            this.sep_lbl.AutoSize = true;
+            this.sep_lbl.Location = new System.Drawing.Point(-2, 38);
+            this.sep_lbl.Name = "sep_lbl";
+            this.sep_lbl.Size = new System.Drawing.Size(496, 13);
+            this.sep_lbl.TabIndex = 16;
+            this.sep_lbl.Text = "---------------------------------------------------------------------------------" +
+    "--------------------------------------------------------------------------------" +
+    "--";
+            this.sep_lbl.Click += new System.EventHandler(this.sep_lbl_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 30F);
+            this.label3.Location = new System.Drawing.Point(277, -2);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 49);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "0";
+            this.label3.Visible = false;
+            // 
+            // prog
+            // 
+            this.prog.Interval = 1000;
+            this.prog.Tick += new System.EventHandler(this.prog_Tick);
+            // 
+            // reverseprog
+            // 
+            this.reverseprog.Interval = 1000;
+            this.reverseprog.Tick += new System.EventHandler(this.reverseprog_Tick);
+            // 
+            // time_lbl
+            // 
+            this.time_lbl.AutoSize = true;
+            this.time_lbl.Font = new System.Drawing.Font("Calibri", 50F);
+            this.time_lbl.Location = new System.Drawing.Point(184, 24);
+            this.time_lbl.Name = "time_lbl";
+            this.time_lbl.Size = new System.Drawing.Size(69, 82);
+            this.time_lbl.TabIndex = 18;
+            this.time_lbl.Text = "0";
+            this.time_lbl.Visible = false;
             // 
             // alarm_img
             // 
@@ -225,45 +221,20 @@
             this.alarm_img.TabIndex = 13;
             this.alarm_img.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Take_a_Break_v2.Properties.Resources.navigation_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(415, 32);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(27, 31);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Take_a_Break_v2.Properties.Resources.settings_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(415, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 31);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 203);
+            this.Controls.Add(this.sep_lbl);
+            this.Controls.Add(this.time_lbl);
             this.Controls.Add(this.alarm_img);
+            this.Controls.Add(this.breaktime_lbl);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.time2_lbl);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.finish_btn);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.s2_lbl);
-            this.Controls.Add(this.s_lbl);
-            this.Controls.Add(this.m2_lbl);
-            this.Controls.Add(this.h2_lbl);
-            this.Controls.Add(this.m_lbl);
-            this.Controls.Add(this.h_lbl);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -277,8 +248,6 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.alarm_img)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,24 +257,22 @@
 
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label h_lbl;
-        private System.Windows.Forms.Label m_lbl;
-        private System.Windows.Forms.Label h2_lbl;
-        private System.Windows.Forms.Label m2_lbl;
-        private System.Windows.Forms.Label s2_lbl;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label s_lbl;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label time2_lbl;
+        private System.Windows.Forms.Timer counter;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button finish_btn;
         private System.Windows.Forms.PictureBox alarm_img;
+        private System.Windows.Forms.Label breaktime_lbl;
+        private System.Windows.Forms.Label sep_lbl;
+        private System.Windows.Forms.Timer prog;
+        private System.Windows.Forms.Timer reverseprog;
+        private System.Windows.Forms.Label time_lbl;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

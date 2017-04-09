@@ -8,22 +8,285 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Take_a_Break_v2.Properties
-{
-
-
+namespace Take_a_Break_v2.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Take a Break v2 - Yuval Gal")]
+        public string Main_Title {
+            get {
+                return ((string)(this["Main_Title"]));
+            }
+            set {
+                this["Main_Title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Have a break for one minute,\\rwalk around you\'r workspace")]
+        public string Message30 {
+            get {
+                return ((string)(this["Message30"]));
+            }
+            set {
+                this["Message30"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Have a break for 10 minutes")]
+        public string Message1 {
+            get {
+                return ((string)(this["Message1"]));
+            }
+            set {
+                this["Message1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Time passed using the computer:")]
+        public string LabelText {
+            get {
+                return ((string)(this["LabelText"]));
+            }
+            set {
+                this["LabelText"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Finish Break")]
+        public string ButtonText {
+            get {
+                return ((string)(this["ButtonText"]));
+            }
+            set {
+                this["ButtonText"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Modes")]
+        public string TabName1 {
+            get {
+                return ((string)(this["TabName1"]));
+            }
+            set {
+                this["TabName1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Alert Types")]
+        public string TabName2 {
+            get {
+                return ((string)(this["TabName2"]));
+            }
+            set {
+                this["TabName2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Settings")]
+        public string Settings_Title {
+            get {
+                return ((string)(this["Settings_Title"]));
+            }
+            set {
+                this["Settings_Title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Sleep Mode")]
+        public string Mode1 {
+            get {
+                return ((string)(this["Mode1"]));
+            }
+            set {
+                this["Mode1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Gaming Mode")]
+        public string Mode2 {
+            get {
+                return ((string)(this["Mode2"]));
+            }
+            set {
+                this["Mode2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Every time you hop above 12:00 pm an alert will rise asking you to save you\'r wor" +
+            "k, after you saved it the computer will shut down and if you will try to turn it" +
+            " on it will shutdown again")]
+        public string Mode1d {
+            get {
+                return ((string)(this["Mode1d"]));
+            }
+            set {
+                this["Mode1d"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Showing the breaks above the video game\'s full screen in the left upper corner to" +
+            " let you know that you should take a break after this match.")]
+        public string Mode2d {
+            get {
+                return ((string)(this["Mode2d"]));
+            }
+            set {
+                this["Mode2d"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Alarm Style")]
+        public string Alert1 {
+            get {
+                return ((string)(this["Alert1"]));
+            }
+            set {
+                this["Alert1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Notification Style")]
+        public string Alert2 {
+            get {
+                return ((string)(this["Alert2"]));
+            }
+            set {
+                this["Alert2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("A repetitive alarm sound that goes on till you end you\'r break.")]
+        public string Alert1d {
+            get {
+                return ((string)(this["Alert1d"]));
+            }
+            set {
+                this["Alert1d"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("A relexing notification sound that goes on when you face a break.")]
+        public string Alert2d {
+            get {
+                return ((string)(this["Alert2d"]));
+            }
+            set {
+                this["Alert2d"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Open")]
+        public string Open {
+            get {
+                return ((string)(this["Open"]));
+            }
+            set {
+                this["Open"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Settings")]
+        public string Settings_contex {
+            get {
+                return ((string)(this["Settings_contex"]));
+            }
+            set {
+                this["Settings_contex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("About")]
+        public string About {
+            get {
+                return ((string)(this["About"]));
+            }
+            set {
+                this["About"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Exit")]
+        public string Exit {
+            get {
+                return ((string)(this["Exit"]));
+            }
+            set {
+                this["Exit"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Take a Break v2")]
+        public string About_lbl {
+            get {
+                return ((string)(this["About_lbl"]));
+            }
+            set {
+                this["About_lbl"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Yuval Gal")]
+        public string About_me {
+            get {
+                return ((string)(this["About_me"]));
+            }
+            set {
+                this["About_me"] = value;
             }
         }
     }
