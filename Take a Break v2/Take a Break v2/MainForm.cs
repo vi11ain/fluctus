@@ -22,7 +22,6 @@ namespace Take_a_Break_v2
         public static bool settings_Alert = true;
         bool in_Break = false;
         bool break_Type;
-        bool sound_Rep;
         public MainForm()
         {
             InitializeComponent();
@@ -66,11 +65,9 @@ namespace Take_a_Break_v2
             if (Settings.Default.Sound == "alarm")
             {
                 str = Properties.Resources.Red_Alert_Alarm_Sound_Effect;
-                sound_Rep = true;
             }else
             {
                 str = Properties.Resources.arpeggio;
-                sound_Rep = false;
             }
         }
 
