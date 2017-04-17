@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/jugges/Take-a-Break-v2/blob/clickonce/Take%2520a%2520Break%2520v2/Take%2520a%2520Break%2520v2/publish/</InstallUrl>
-    <ApplicationRevision>2</ApplicationRevision>
+    <InstallUrl>https://github.com/jugges/Take-a-Break-v2/blob/clickonce/Take%2520a%2520Break%2520v2/Take%2520a%2520Break%2520v2/bin/Debug/app.publish/%3fraw=true/</InstallUrl>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
