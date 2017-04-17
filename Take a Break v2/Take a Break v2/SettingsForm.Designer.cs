@@ -69,9 +69,9 @@
             this.groupBox2.Controls.Add(this.radioButton3);
             this.groupBox2.Controls.Add(this.radioButton4);
             this.groupBox2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.groupBox2.Location = new System.Drawing.Point(103, 12);
+            this.groupBox2.Location = new System.Drawing.Point(103, 14);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(342, 228);
+            this.groupBox2.Size = new System.Drawing.Size(679, 228);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Alert Types";
@@ -85,7 +85,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(342, 228);
+            this.groupBox1.Size = new System.Drawing.Size(679, 228);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modes";
@@ -115,7 +115,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(6, 154);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(330, 67);
+            this.richTextBox1.Size = new System.Drawing.Size(667, 67);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "Showing the breaks above the video game\'s full screen in the left upper corner to" +
     " let you know that you should take a break after this match.";
@@ -125,7 +125,7 @@
             this.richTextBox2.Location = new System.Drawing.Point(6, 53);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(330, 67);
+            this.richTextBox2.Size = new System.Drawing.Size(667, 68);
             this.richTextBox2.TabIndex = 2;
             this.richTextBox2.Text = "Every time you hop above 12:00 pm an alert will rise asking you to save you\'r wor" +
     "k, after you saved it the computer will shut down and if you will try to turn it" +
@@ -177,7 +177,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 11.25F);
-            this.label1.Location = new System.Drawing.Point(29, 209);
+            this.label1.Location = new System.Drawing.Point(29, 219);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 18);
             this.label1.TabIndex = 7;
@@ -186,7 +186,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Take_a_Break_v2.Properties.Resources.USA_b1015c333a0a2633440d4bc906e23fda;
-            this.pictureBox2.Location = new System.Drawing.Point(393, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(730, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(22, 21);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -197,7 +197,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Take_a_Break_v2.Properties.Resources.Israel_c503417b5198a423c3bed2af5c585ede;
-            this.pictureBox1.Location = new System.Drawing.Point(420, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(757, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -211,7 +211,7 @@
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.BackgroundImage = global::Take_a_Break_v2.Properties.Resources.cinemagram_icon;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(12, 121);
+            this.button1.Location = new System.Drawing.Point(12, 131);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 85);
             this.button1.TabIndex = 6;
@@ -237,7 +237,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 246);
+            this.ClientSize = new System.Drawing.Size(794, 246);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -247,9 +247,9 @@
             this.Controls.Add(this.button2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(473, 285);
+            this.MaximumSize = new System.Drawing.Size(810, 285);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(473, 285);
+            this.MinimumSize = new System.Drawing.Size(810, 285);
             this.Name = "SettingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";

@@ -14,6 +14,7 @@ namespace Take_a_Break_v2
         TimeSpan onemin = new TimeSpan(0, 1, 0);
         TimeSpan tenmin = new TimeSpan(0, 10, 0);
         TimeSpan changeme = new TimeSpan(9, 9, 9);
+        System.IO.Stream str;
         string m30;
         string m1;
         string displayme;
@@ -21,6 +22,7 @@ namespace Take_a_Break_v2
         public static bool settings_Alert = true;
         bool in_Break = false;
         bool break_Type;
+        bool sound_Rep;
         public MainForm()
         {
             InitializeComponent();
@@ -47,6 +49,7 @@ namespace Take_a_Break_v2
             sep_lbl.AutoSize = false;
             sep_lbl.Height = 2;
             sep_lbl.BorderStyle = BorderStyle.Fixed3D;
+            System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
         }
 
         private void lang_Refresh()
@@ -60,6 +63,15 @@ namespace Take_a_Break_v2
             aboutToolStripMenuItem.Text = Settings.Default.About;
             settingsToolStripMenuItem.Text = Settings.Default.Settings_contex;
             exitToolStripMenuItem.Text = Settings.Default.Exit;
+            if (Settings.Default.Sound == "alarm")
+            {
+                str = Properties.Resources.Red_Alert_Alarm_Sound_Effect;
+                sound_Rep = true;
+            }else
+            {
+                str = Properties.Resources.arpeggio;
+                sound_Rep = false;
+            }
         }
 
         private void break_Refresh()
@@ -146,8 +158,24 @@ namespace Take_a_Break_v2
                 break_timer.Start();
                 prog.Start();
                 this.Show();
+                System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
+                snd.Play();
             }
-            if (timer.Elapsed.Hours != 0 && timer.Elapsed.Minutes == 0 && progressBar1.Value == 0)
+            if (timer.Elapsed.Hours != 0 && timer.Elapsed.Hours % 2 != 0 && timer.Elapsed.Minutes == 0 && progressBar1.Value == 0)
+            {
+                in_Break = true;
+                break_Type = true;
+                progressBar1.Maximum = 600;
+                displayme = m30;
+                break_Refresh();
+                timer.Stop();
+                break_timer.Start();
+                prog.Start();
+                this.Show();
+                System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
+                snd.Play();
+            }
+            if (timer.Elapsed.Hours != 0 && timer.Elapsed.Hours % 2 == 0 && timer.Elapsed.Minutes == 0 && progressBar1.Value == 0)
             {
                 in_Break = true;
                 break_Type = false;
@@ -158,13 +186,16 @@ namespace Take_a_Break_v2
                 break_timer.Start();
                 prog.Start();
                 this.Show();
-
+                System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
+                snd.Play();
             }
             //if (changeme.Minutes == 0 && changeme.Seconds == 0)
             //{
             if (in_Break)
+            {
                 if (progressBar1.Value == 600)
                     break_timer.Stop();
+            }
             //}
         }
 

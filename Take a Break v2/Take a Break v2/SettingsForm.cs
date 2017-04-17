@@ -37,12 +37,12 @@ namespace Take_a_Break_v2
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-
+            Settings.Default.Sound = "relax";
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
-
+            Settings.Default.Sound = "alarm";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,6 +70,13 @@ namespace Take_a_Break_v2
             richTextBox4.Text = Settings.Default.Alert1d;
             radioButton3.Text = Settings.Default.Alert2;
             richTextBox3.Text = Settings.Default.Alert2d;
+            if (Settings.Default.Sound == "alarm")
+            {
+                radioButton4.Select();
+            }else
+            {
+                radioButton3.Select();
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

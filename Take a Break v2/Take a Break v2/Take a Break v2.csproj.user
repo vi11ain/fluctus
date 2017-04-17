@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>C:\Users\Yuval Gal\Desktop\publish\|https://raw.githubusercontent.com/jugges/Take-a-Break-v2/blob/clickonce/Take%2520a%2520Break%2520v2/Take%2520a%2520Break%2520v2/bin/Debug/Take%2520a%2520Break%2520v2.exe%3fraw=true/|https://raw.githubusercontent.com/jugges/Take-a-Break-v2/clickonce/Take a Break v2/Take a Break v2/publish/|https://raw.githubusercontent.com/jugges/Take-a-Break-v2/clickonce/Take a Break v2/Take a Break v2/|publish\</PublishUrlHistory>
+    <InstallUrlHistory>https://raw.githubusercontent.com/jugges/Take-a-Break-v2/blob/clickonce/Take%2520a%2520Break%2520v2/Take%2520a%2520Break%2520v2/publish/</InstallUrlHistory>
+    <SupportUrlHistory />
+    <UpdateUrlHistory />
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+  </PropertyGroup>
+</Project>

@@ -289,5 +289,17 @@ namespace Take_a_Break_v2.Properties {
                 this["About_me"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("relax")]
+        public string Sound {
+            get {
+                return ((string)(this["Sound"]));
+            }
+            set {
+                this["Sound"] = value;
+            }
+        }
     }
 }

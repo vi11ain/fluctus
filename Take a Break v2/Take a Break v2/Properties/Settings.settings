@@ -68,5 +68,8 @@
     <Setting Name="About_me" Type="System.String" Scope="User">
       <Value Profile="(Default)">Yuval Gal</Value>
     </Setting>
+    <Setting Name="Sound" Type="System.String" Scope="User">
+      <Value Profile="(Default)">relax</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

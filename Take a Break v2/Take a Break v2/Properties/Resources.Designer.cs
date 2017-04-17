@@ -61,6 +61,15 @@ namespace Take_a_Break_v2.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream arpeggio {
+            get {
+                return ResourceManager.GetStream("arpeggio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap calendar_icon {
@@ -137,6 +146,15 @@ namespace Take_a_Break_v2.Properties {
             get {
                 object obj = ResourceManager.GetObject("no-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Red_Alert_Alarm_Sound_Effect {
+            get {
+                return ResourceManager.GetStream("Red_Alert_Alarm_Sound_Effect", resourceCulture);
             }
         }
         

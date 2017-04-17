@@ -20,3 +20,8 @@ C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take-a-Break-v2\Ta
 C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take-a-Break-v2\Take a Break v2\Take a Break v2\bin\Debug\Take a Break v2.exe.config
 C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take-a-Break-v2\Take a Break v2\Take a Break v2\obj\Debug\Take a Break v2.csprojResolveAssemblyReference.cache
 C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take-a-Break-v2\Take a Break v2\Take a Break v2\obj\Debug\Take_a_Break_v2.AboutForm.resources
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take-a-Break-v2\Take a Break v2\Take a Break v2\obj\Debug\Take a Break v2.TrustInfo.xml
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take-a-Break-v2\Take a Break v2\Take a Break v2\bin\Debug\Take a Break v2.exe.manifest
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take-a-Break-v2\Take a Break v2\Take a Break v2\bin\Debug\Take a Break v2.application
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take-a-Break-v2\Take a Break v2\Take a Break v2\obj\Debug\Take a Break v2.exe.manifest
+C:\Users\Yuval Gal\Documents\Folders\Projects\Take a Break v2\Take-a-Break-v2\Take a Break v2\Take a Break v2\obj\Debug\Take a Break v2.application
