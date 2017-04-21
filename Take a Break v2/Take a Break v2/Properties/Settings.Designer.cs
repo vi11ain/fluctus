@@ -301,5 +301,17 @@ namespace Take_a_Break_v2.Properties {
                 this["Sound"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("small")]
+        public string Size {
+            get {
+                return ((string)(this["Size"]));
+            }
+            set {
+                this["Size"] = value;
+            }
+        }
     }
 }

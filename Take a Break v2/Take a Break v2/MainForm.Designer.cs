@@ -49,6 +49,8 @@
             this.reverseprog = new System.Windows.Forms.Timer(this.components);
             this.time_lbl = new System.Windows.Forms.Label();
             this.alarm_img = new System.Windows.Forms.PictureBox();
+            this.adder = new System.Windows.Forms.Timer(this.components);
+            this.label4 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alarm_img)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +75,7 @@
             // 
             // openToolStripMenuItem
             // 
-            this.openToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.dialled_nimbers_icon;
+            this.openToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.Open;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.openToolStripMenuItem.Text = "Open";
@@ -81,7 +83,7 @@
             // 
             // settingsToolStripMenuItem
             // 
-            this.settingsToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.settings_icon;
+            this.settingsToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.Settings;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -89,7 +91,7 @@
             // 
             // aboutToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.navigation_icon;
+            this.aboutToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.About;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "About";
@@ -97,7 +99,7 @@
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.no_icon;
+            this.exitToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.Exit;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.exitToolStripMenuItem.Text = "Exit";
@@ -127,6 +129,7 @@
             // counter
             // 
             this.counter.Enabled = true;
+            this.counter.Interval = 1000;
             this.counter.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // progressBar1
@@ -213,7 +216,7 @@
             // 
             // alarm_img
             // 
-            this.alarm_img.Image = global::Take_a_Break_v2.Properties.Resources.Zootopia_Party_Alert_emoticon;
+            this.alarm_img.Image = global::Take_a_Break_v2.Properties.Resources.Alarm;
             this.alarm_img.Location = new System.Drawing.Point(16, 43);
             this.alarm_img.Name = "alarm_img";
             this.alarm_img.Size = new System.Drawing.Size(59, 56);
@@ -221,11 +224,27 @@
             this.alarm_img.TabIndex = 13;
             this.alarm_img.TabStop = false;
             // 
+            // adder
+            // 
+            this.adder.Tick += new System.EventHandler(this.adder_Tick);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(339, -2);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 42);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "oh";
+            this.label4.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 203);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.sep_lbl);
             this.Controls.Add(this.time_lbl);
             this.Controls.Add(this.alarm_img);
@@ -274,5 +293,7 @@
         private System.Windows.Forms.Label time_lbl;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer adder;
+        private System.Windows.Forms.Label label4;
     }
 }

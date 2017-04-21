@@ -71,5 +71,8 @@
     <Setting Name="Sound" Type="System.String" Scope="User">
       <Value Profile="(Default)">relax</Value>
     </Setting>
+    <Setting Name="Size" Type="System.String" Scope="User">
+      <Value Profile="(Default)">small</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

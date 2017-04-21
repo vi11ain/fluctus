@@ -14,7 +14,10 @@ namespace Take_a_Break_v2
         TimeSpan onemin = new TimeSpan(0, 1, 0);
         TimeSpan tenmin = new TimeSpan(0, 10, 0);
         TimeSpan changeme = new TimeSpan(9, 9, 9);
+        Size breakSize;
+        Size regularSize;
         System.IO.Stream str;
+        System.Media.SoundPlayer snd;
         string m30;
         string m1;
         string displayme;
@@ -42,9 +45,9 @@ namespace Take_a_Break_v2
             this.ShowInTaskbar = false;
             RegistryKey rk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
             rk.SetValue("Take a Break v2", Application.ExecutablePath.ToString());
+            lang_Refresh();
             timer.Start();
             break_Refresh();
-            lang_Refresh();
             sep_lbl.AutoSize = false;
             sep_lbl.Height = 2;
             sep_lbl.BorderStyle = BorderStyle.Fixed3D;
@@ -64,10 +67,23 @@ namespace Take_a_Break_v2
             exitToolStripMenuItem.Text = Settings.Default.Exit;
             if (Settings.Default.Sound == "alarm")
             {
-                str = Properties.Resources.Red_Alert_Alarm_Sound_Effect;
+                str = Properties.Resources.AlertSound;
+                snd = new System.Media.SoundPlayer(str);
+            } else
+            {
+                str = Properties.Resources.RelaxSound;
+                snd = new System.Media.SoundPlayer(str);
+            }
+            if(Settings.Default.Size == "small")
+            {
+                regularSize= new Size(459, 140);
+                breakSize = new Size(459, 242);
             }else
             {
-                str = Properties.Resources.arpeggio;
+                regularSize = new Size(559, 240);
+                breakSize = new Size(549, 342);
+                label1.Font = label4.Font;
+                label2.Font = label4.Font;
             }
         }
 
@@ -78,13 +94,13 @@ namespace Take_a_Break_v2
             Point timelocation;
             if (!in_Break)
             {
-                startsize = new Size(459, 140);
+                startsize = regularSize;
                 startfont = time2_lbl.Font;
                 timelocation = time2_lbl.Location;
             }
             else
             {
-                startsize = new Size(459, 242);
+                startsize = breakSize;
                 startfont = label3.Font;
                 timelocation = label3.Location;
                 if (!this.ShowInTaskbar)
@@ -112,12 +128,12 @@ namespace Take_a_Break_v2
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (!this.Visible||!this.ShowInTaskbar)
+            if (!this.Visible || !this.ShowInTaskbar)
             {
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
                 this.Show();
-            }else
+            } else
             {
                 this.WindowState = FormWindowState.Minimized;
                 this.ShowInTaskbar = false;
@@ -134,14 +150,7 @@ namespace Take_a_Break_v2
             }
             if (this.Visible == true)
             {
-                if (in_Break)
-                {
-                    breaktime_lbl.Text = (changeme.ToString("mm\\:ss"));
-                    if (break_Type)
-                        changeme = onemin - break_timer.Elapsed;
-                    else
-                        changeme = tenmin - break_timer.Elapsed;
-                }
+
                 time_lbl.Text = (timer.Elapsed.ToString("hh\\:mm"));
             }
             if (timer.Elapsed.Minutes == 30 && progressBar1.Value == 0)
@@ -154,9 +163,10 @@ namespace Take_a_Break_v2
                 timer.Stop();
                 break_timer.Start();
                 prog.Start();
+                adder.Start();
                 this.Show();
-                System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
                 snd.Play();
+                progressBar1.Value += 10;
             }
             if (timer.Elapsed.Hours != 0 && timer.Elapsed.Hours % 2 != 0 && timer.Elapsed.Minutes == 0 && progressBar1.Value == 0)
             {
@@ -168,9 +178,10 @@ namespace Take_a_Break_v2
                 timer.Stop();
                 break_timer.Start();
                 prog.Start();
+                adder.Start();
                 this.Show();
-                System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
                 snd.Play();
+                progressBar1.Value += 10;
             }
             if (timer.Elapsed.Hours != 0 && timer.Elapsed.Hours % 2 == 0 && timer.Elapsed.Minutes == 0 && progressBar1.Value == 0)
             {
@@ -182,9 +193,10 @@ namespace Take_a_Break_v2
                 timer.Stop();
                 break_timer.Start();
                 prog.Start();
+                adder.Start();
                 this.Show();
-                System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
                 snd.Play();
+                progressBar1.Value += 1;
             }
             //if (changeme.Minutes == 0 && changeme.Seconds == 0)
             //{
@@ -234,6 +246,7 @@ namespace Take_a_Break_v2
                 if (break_Type)
                 {
                     progressBar1.Value += 10;
+
                 }
                 else
                 {
@@ -265,6 +278,26 @@ namespace Take_a_Break_v2
         private void sep_lbl_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void adder_Tick(object sender, EventArgs e)
+        {
+            if (break_timer.Elapsed.Minutes != 1)
+            {
+                breaktime_lbl.Text = (changeme.ToString("mm\\:ss"));
+                if (break_Type)
+                {
+                    changeme = onemin - break_timer.Elapsed;
+
+                }
+                else
+                {
+                    changeme = tenmin - break_timer.Elapsed;
+                }
+            }else
+            {
+                adder.Stop();
+            }
         }
     }
 }

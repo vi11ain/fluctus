@@ -58,9 +58,7 @@ namespace Take_a_Break_v2
         private void refresh_Lang()
         {
             this.Text = Settings.Default.Settings_Title;
-            label1.Text = Settings.Default.TabName1;
             groupBox1.Text = Settings.Default.TabName1;
-            label2.Text = Settings.Default.TabName2;
             groupBox2.Text = Settings.Default.TabName2;
             checkBox1.Text = Settings.Default.Mode1;
             richTextBox2.Text = Settings.Default.Mode1d;
@@ -130,6 +128,23 @@ namespace Take_a_Break_v2
             Settings.Default.Exit = "יציאה";
             Settings.Default.Save();
             refresh_Lang();
+            MainForm.refresh_lang4me = true;
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
+        {
+            Settings.Default.Size = "big";
+            MainForm.refresh_lang4me = true;
+        }
+
+        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            Settings.Default.Size = "small";
             MainForm.refresh_lang4me = true;
         }
     }

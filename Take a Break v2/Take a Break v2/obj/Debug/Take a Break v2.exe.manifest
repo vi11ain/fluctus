@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Take a Break v2.exe" size="27365888">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Take a Break v2.exe" size="27366400">
       <assemblyIdentity name="Take a Break v2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Zg0NIx2A5s2km9cr0I9/eohV4zJv2Zc4BdIcIQIeflo=</dsig:DigestValue>
+        <dsig:DigestValue>RWZwpeSC58UY59nJiGJ/gWC8S+Vw5trhELxDdXSValo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -63,13 +63,13 @@
       <dsig:DigestValue>WgWGEEZfltRiGBTVvmFHZrcDjUOwS1gRa3qDQXezhxs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Take a Break v2.exe.config" size="4123">
+  <file name="Take a Break v2.exe.config" size="4241">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>qgApAXs4KXRyIoZfgVYvaen4TE+F8KsaRg9nlhMDeFU=</dsig:DigestValue>
+      <dsig:DigestValue>bjfigqcQbNC4GGr/IUbZTmmj+1xaz7YgGmvWbipDHnc=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
