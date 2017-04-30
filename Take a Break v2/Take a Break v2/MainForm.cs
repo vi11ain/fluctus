@@ -43,8 +43,6 @@ namespace Take_a_Break_v2
         {
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
-            RegistryKey rk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-            rk.SetValue("Take a Break v2", Application.ExecutablePath.ToString());
             lang_Refresh();
             timer.Start();
             break_Refresh();
@@ -103,11 +101,9 @@ namespace Take_a_Break_v2
                 startsize = breakSize;
                 startfont = label3.Font;
                 timelocation = label3.Location;
-                if (!this.ShowInTaskbar)
-                {
-                    this.ShowInTaskbar = true;
-                    this.WindowState = FormWindowState.Normal;
-                }
+                //this.ShowInTaskbar = true;
+                this.WindowState = FormWindowState.Normal;
+                this.Show();
             }
 
             this.Size = startsize;
@@ -128,16 +124,16 @@ namespace Take_a_Break_v2
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (!this.Visible || !this.ShowInTaskbar)
+            if (!this.Visible||this.WindowState==FormWindowState.Minimized)
             {
                 this.WindowState = FormWindowState.Normal;
-                this.ShowInTaskbar = true;
+                //this.ShowInTaskbar = true;
                 this.Show();
             } else
             {
-                this.WindowState = FormWindowState.Minimized;
-                this.ShowInTaskbar = false;
                 this.Hide();
+                this.WindowState = FormWindowState.Minimized;
+                //this.ShowInTaskbar = false;
             }
         }
 
@@ -212,7 +208,7 @@ namespace Take_a_Break_v2
         {
             this.Visible = true;
             this.WindowState = FormWindowState.Normal;
-            this.ShowInTaskbar = true;
+            //this.ShowInTaskbar = true;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -282,21 +278,26 @@ namespace Take_a_Break_v2
 
         private void adder_Tick(object sender, EventArgs e)
         {
-            if (break_timer.Elapsed.Minutes != 1)
+            breaktime_lbl.Text = (changeme.ToString("mm\\:ss"));
+            if (break_Type)
             {
-                breaktime_lbl.Text = (changeme.ToString("mm\\:ss"));
-                if (break_Type)
+                if (break_timer.Elapsed.Minutes != 1)
                 {
                     changeme = onemin - break_timer.Elapsed;
-
                 }
                 else
                 {
-                    changeme = tenmin - break_timer.Elapsed;
+                    adder.Stop();
                 }
             }else
             {
-                adder.Stop();
+                if (break_timer.Elapsed.Minutes != 10)
+                {
+                    changeme = tenmin - break_timer.Elapsed;
+                }else
+                {
+                    adder.Stop();
+                }
             }
         }
     }

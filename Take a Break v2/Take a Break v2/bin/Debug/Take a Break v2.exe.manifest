@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Ampeross-Qetto-2-Clock.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Take a Break v2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Take a Break v2" version="0.4.0.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="Take a Break v2.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -44,13 +44,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Take a Break v2.exe" size="27366400">
-      <assemblyIdentity name="Take a Break v2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Take a Break v2" version="0.4.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RWZwpeSC58UY59nJiGJ/gWC8S+Vw5trhELxDdXSValo=</dsig:DigestValue>
+        <dsig:DigestValue>FVgYty7kT/pwMc6BN4KlCAGW7A5iFi29ITti152dPHA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
