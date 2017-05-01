@@ -1,4 +1,4 @@
-﻿namespace Take_a_Break_v2
+﻿namespace Fluctus
 {
     partial class SettingsForm
     {
@@ -30,27 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.richTextBox5 = new System.Windows.Forms.RichTextBox();
             this.richTextBox6 = new System.Windows.Forms.RichTextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -66,6 +68,48 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Alert Types";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(6, 154);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ReadOnly = true;
+            this.richTextBox3.Size = new System.Drawing.Size(330, 67);
+            this.richTextBox3.TabIndex = 3;
+            this.richTextBox3.Text = "A relexing notification sound that goes on when you face a break.";
+            // 
+            // richTextBox4
+            // 
+            this.richTextBox4.Location = new System.Drawing.Point(6, 53);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.ReadOnly = true;
+            this.richTextBox4.Size = new System.Drawing.Size(330, 67);
+            this.richTextBox4.TabIndex = 2;
+            this.richTextBox4.Text = "A repetitive alarm sound that goes on till you end you\'r break.";
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(6, 126);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(131, 22);
+            this.radioButton3.TabIndex = 1;
+            this.radioButton3.Text = "Notification Style";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Checked = true;
+            this.radioButton4.Location = new System.Drawing.Point(6, 25);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(97, 22);
+            this.radioButton4.TabIndex = 0;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Alarm Style";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -121,70 +165,6 @@
             this.richTextBox2.Text = "Every time you hop above 12:00 pm an alert will rise asking you to save you\'r wor" +
     "k, after you saved it the computer will shut down and if you will try to turn it" +
     " on it will shutdown again";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Location = new System.Drawing.Point(6, 154);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(330, 67);
-            this.richTextBox3.TabIndex = 3;
-            this.richTextBox3.Text = "A relexing notification sound that goes on when you face a break.";
-            // 
-            // richTextBox4
-            // 
-            this.richTextBox4.Location = new System.Drawing.Point(6, 53);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.ReadOnly = true;
-            this.richTextBox4.Size = new System.Drawing.Size(330, 67);
-            this.richTextBox4.TabIndex = 2;
-            this.richTextBox4.Text = "A repetitive alarm sound that goes on till you end you\'r break.";
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 126);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(131, 22);
-            this.radioButton3.TabIndex = 1;
-            this.radioButton3.Text = "Notification Style";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Checked = true;
-            this.radioButton4.Location = new System.Drawing.Point(6, 25);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(97, 22);
-            this.radioButton4.TabIndex = 0;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Alarm Style";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Take_a_Break_v2.Properties.Resources.English;
-            this.pictureBox2.Location = new System.Drawing.Point(755, 47);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 29);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Take_a_Break_v2.Properties.Resources.Hebrew;
-            this.pictureBox1.Location = new System.Drawing.Point(755, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(38, 29);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox3
             // 
@@ -243,11 +223,45 @@
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged_1);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Fluctus.Properties.Resources.update;
+            this.pictureBox3.Location = new System.Drawing.Point(756, 83);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(37, 32);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 10;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Fluctus.Properties.Resources.english;
+            this.pictureBox2.Location = new System.Drawing.Point(755, 47);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(38, 29);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Fluctus.Properties.Resources.hebrew;
+            this.pictureBox1.Location = new System.Drawing.Point(755, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(38, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 399);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox2);
@@ -267,10 +281,11 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,5 +308,6 @@
         private System.Windows.Forms.RichTextBox richTextBox6;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

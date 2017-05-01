@@ -119,9 +119,11 @@
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
     <value>Legal Info:
-I used icons &amp; images made by two artists on IconArchive.com,
+Main Icon is original content made by me, and is not open to sharing.
+I used icons &amp; images made by artists from IconArchive.com,
 1. Matz90 - http://www.iconarchive.com/artist/martz90.html
 2. Ampeross - http://www.iconarchive.com/artist/ampeross.html
+3. Oxygen Team - http://www.iconarchive.com/artist/oxygen-icons.org.html
 The red alert gif image was taken from - http://dcdcapital.com/galleries/club-penguin-wiki-fandom-powered-by-wikia.html</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />

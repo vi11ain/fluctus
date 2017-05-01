@@ -1,15 +1,17 @@
-﻿using System;
+﻿using Fluctus.Properties;
+using HtmlAgilityPack;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Take_a_Break_v2.Properties;
 
-namespace Take_a_Break_v2
+namespace Fluctus
 {
     public partial class SettingsForm : Form
     {
@@ -79,7 +81,7 @@ namespace Take_a_Break_v2
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Settings.Default.Main_Title = "Take a Break v2 - Yuval Gal";
+            Settings.Default.Main_Title = "Fluctus";
             Settings.Default.Message30 = "Have a break for one minute,\rwalk around you'r workspace";
             Settings.Default.Alert1 = "Alarm Style";
             Settings.Default.Alert1d = "A repetitive alarm sound that goes on till you end you'r break.";
@@ -106,7 +108,7 @@ namespace Take_a_Break_v2
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Settings.Default.Main_Title = "קח הפסקה 2 - יובל גל";
+            Settings.Default.Main_Title = "Fluctus";
             Settings.Default.Message30 = "קח הפסקה לדקה,\rהתהלך בסביבתך";
             Settings.Default.Alert1 = "סגנון אזעקה";
             Settings.Default.Alert1d = "אזעקה שחוזרת על עצמה עד שתסיים את ההפסקה שלך.";
@@ -146,6 +148,28 @@ namespace Take_a_Break_v2
         {
             Settings.Default.Size = "small";
             MainForm.refresh_lang4me = true;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Checking for updates, might take up to a minute or two...");
+            HtmlWeb web = new HtmlWeb();
+            HtmlAgilityPack.HtmlDocument doc = web.Load("https://github.com/jugges/Take-a-Break-v2/releases");
+            var xpath = "/html[1]/body[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]";
+            var span = doc.DocumentNode.SelectSingleNode(xpath);
+            var title = span.InnerText;
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+            string version = fvi.FileVersion;
+            MessageBox.Show(version);
+            if (title == version)
+            {
+                MessageBox.Show("No current updates, you are using the latest version!");
+            }
+            else
+            {
+                MessageBox.Show("New update found, redecting you to download page!");
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Take_a_Break_v2
+﻿namespace Fluctus
 {
     partial class MainForm
     {
@@ -48,9 +48,9 @@
             this.prog = new System.Windows.Forms.Timer(this.components);
             this.reverseprog = new System.Windows.Forms.Timer(this.components);
             this.time_lbl = new System.Windows.Forms.Label();
-            this.alarm_img = new System.Windows.Forms.PictureBox();
             this.adder = new System.Windows.Forms.Timer(this.components);
             this.label4 = new System.Windows.Forms.Label();
+            this.alarm_img = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alarm_img)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             // 
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "Take a Break v2";
+            this.notifyIcon1.Text = "Fluctus";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
@@ -75,7 +75,7 @@
             // 
             // openToolStripMenuItem
             // 
-            this.openToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.Open;
+            this.openToolStripMenuItem.Image = global::Fluctus.Properties.Resources.open;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.openToolStripMenuItem.Text = "Open";
@@ -83,7 +83,7 @@
             // 
             // settingsToolStripMenuItem
             // 
-            this.settingsToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.Settings;
+            this.settingsToolStripMenuItem.Image = global::Fluctus.Properties.Resources.settings;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -91,7 +91,7 @@
             // 
             // aboutToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.About;
+            this.aboutToolStripMenuItem.Image = global::Fluctus.Properties.Resources.about;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "About";
@@ -99,7 +99,7 @@
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Image = global::Take_a_Break_v2.Properties.Resources.Exit;
+            this.exitToolStripMenuItem.Image = global::Fluctus.Properties.Resources.exit;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.exitToolStripMenuItem.Text = "Exit";
@@ -214,16 +214,6 @@
             this.time_lbl.Text = "0";
             this.time_lbl.Visible = false;
             // 
-            // alarm_img
-            // 
-            this.alarm_img.Image = global::Take_a_Break_v2.Properties.Resources.Alarm;
-            this.alarm_img.Location = new System.Drawing.Point(16, 43);
-            this.alarm_img.Name = "alarm_img";
-            this.alarm_img.Size = new System.Drawing.Size(59, 56);
-            this.alarm_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.alarm_img.TabIndex = 13;
-            this.alarm_img.TabStop = false;
-            // 
             // adder
             // 
             this.adder.Tick += new System.EventHandler(this.adder_Tick);
@@ -238,6 +228,16 @@
             this.label4.TabIndex = 19;
             this.label4.Text = "oh";
             this.label4.Visible = false;
+            // 
+            // alarm_img
+            // 
+            this.alarm_img.Image = global::Fluctus.Properties.Resources.red;
+            this.alarm_img.Location = new System.Drawing.Point(16, 43);
+            this.alarm_img.Name = "alarm_img";
+            this.alarm_img.Size = new System.Drawing.Size(59, 56);
+            this.alarm_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.alarm_img.TabIndex = 13;
+            this.alarm_img.TabStop = false;
             // 
             // MainForm
             // 
@@ -262,7 +262,7 @@
             this.MinimumSize = new System.Drawing.Size(459, 152);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Take a Break v2 - Yuval Gal";
+            this.Text = "Fluctus";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.contextMenuStrip1.ResumeLayout(false);

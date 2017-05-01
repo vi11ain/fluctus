@@ -1,9 +1,9 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Take_a_Break_v2.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Fluctus.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="Main_Title" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Take a Break v2 - Yuval Gal</Value>
+      <Value Profile="(Default)">Fluctus</Value>
     </Setting>
     <Setting Name="Message30" Type="System.String" Scope="User">
       <Value Profile="(Default)">Have a break for one minute,\rwalk around you'r workspace</Value>

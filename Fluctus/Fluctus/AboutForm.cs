@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Take_a_Break_v2
+namespace Fluctus
 {
     public partial class AboutForm : Form
     {

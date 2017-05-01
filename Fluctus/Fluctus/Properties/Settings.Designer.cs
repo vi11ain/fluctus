@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Take_a_Break_v2.Properties {
+namespace Fluctus.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -25,7 +25,7 @@ namespace Take_a_Break_v2.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Take a Break v2 - Yuval Gal")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Fluctus")]
         public string Main_Title {
             get {
                 return ((string)(this["Main_Title"]));

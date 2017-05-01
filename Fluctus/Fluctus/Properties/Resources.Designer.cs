@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Take_a_Break_v2.Properties {
+namespace Fluctus.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Take_a_Break_v2.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Take_a_Break_v2.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Fluctus.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,19 +63,9 @@ namespace Take_a_Break_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap About {
+        internal static System.Drawing.Bitmap about {
             get {
-                object obj = ResourceManager.GetObject("About", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Alarm {
-            get {
-                object obj = ResourceManager.GetObject("Alarm", resourceCulture);
+                object obj = ResourceManager.GetObject("about", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,18 +73,18 @@ namespace Take_a_Break_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream AlertSound {
+        internal static System.IO.UnmanagedMemoryStream alarm {
             get {
-                return ResourceManager.GetStream("AlertSound", resourceCulture);
+                return ResourceManager.GetStream("alarm", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Calender {
+        internal static System.Drawing.Bitmap english {
             get {
-                object obj = ResourceManager.GetObject("Calender", resourceCulture);
+                object obj = ResourceManager.GetObject("english", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -102,9 +92,9 @@ namespace Take_a_Break_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap English {
+        internal static System.Drawing.Bitmap exit {
             get {
-                object obj = ResourceManager.GetObject("English", resourceCulture);
+                object obj = ResourceManager.GetObject("exit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -112,9 +102,9 @@ namespace Take_a_Break_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Exit {
+        internal static System.Drawing.Bitmap hebrew {
             get {
-                object obj = ResourceManager.GetObject("Exit", resourceCulture);
+                object obj = ResourceManager.GetObject("hebrew", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -122,9 +112,9 @@ namespace Take_a_Break_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Hebrew {
+        internal static System.Drawing.Bitmap icon {
             get {
-                object obj = ResourceManager.GetObject("Hebrew", resourceCulture);
+                object obj = ResourceManager.GetObject("icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -132,9 +122,9 @@ namespace Take_a_Break_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Icon {
+        internal static System.Drawing.Bitmap open {
             get {
-                object obj = ResourceManager.GetObject("Icon", resourceCulture);
+                object obj = ResourceManager.GetObject("open", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -142,19 +132,9 @@ namespace Take_a_Break_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Modess {
+        internal static System.Drawing.Bitmap red {
             get {
-                object obj = ResourceManager.GetObject("Modess", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Open {
-            get {
-                object obj = ResourceManager.GetObject("Open", resourceCulture);
+                object obj = ResourceManager.GetObject("red", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -162,28 +142,38 @@ namespace Take_a_Break_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream RelaxSound {
+        internal static System.IO.UnmanagedMemoryStream relaxing {
             get {
-                return ResourceManager.GetStream("RelaxSound", resourceCulture);
+                return ResourceManager.GetStream("relaxing", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Settings {
+        internal static System.Drawing.Bitmap settings {
             get {
-                object obj = ResourceManager.GetObject("Settings", resourceCulture);
+                object obj = ResourceManager.GetObject("settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon smoother {
+            get {
+                object obj = ResourceManager.GetObject("smoother", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Sounds {
+        internal static System.Drawing.Bitmap update {
             get {
-                object obj = ResourceManager.GetObject("Sounds", resourceCulture);
+                object obj = ResourceManager.GetObject("update", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

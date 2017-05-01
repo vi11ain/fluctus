@@ -2,10 +2,9 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Diagnostics;
-using Take_a_Break_v2.Properties;
-using Microsoft.Win32;
-using System.Threading;
-namespace Take_a_Break_v2
+using Fluctus.Properties;
+
+namespace Fluctus
 {
     public partial class MainForm : Form
     {
@@ -65,11 +64,11 @@ namespace Take_a_Break_v2
             exitToolStripMenuItem.Text = Settings.Default.Exit;
             if (Settings.Default.Sound == "alarm")
             {
-                str = Properties.Resources.AlertSound;
+                str = Properties.Resources.alarm;
                 snd = new System.Media.SoundPlayer(str);
             } else
             {
-                str = Properties.Resources.RelaxSound;
+                str = Properties.Resources.relaxing;
                 snd = new System.Media.SoundPlayer(str);
             }
             if(Settings.Default.Size == "small")

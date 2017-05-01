@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Take_a_Break_v2
+namespace Fluctus
 {
     static class Program
     {
