@@ -34,10 +34,10 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aFKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.time2_lbl = new System.Windows.Forms.Label();
             this.counter = new System.Windows.Forms.Timer(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.finish_btn = new System.Windows.Forms.Button();
@@ -51,6 +51,7 @@
             this.adder = new System.Windows.Forms.Timer(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.alarm_img = new System.Windows.Forms.PictureBox();
+            this.skip_btn = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alarm_img)).BeginInit();
             this.SuspendLayout();
@@ -68,16 +69,17 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
             this.settingsToolStripMenuItem,
+            this.aFKToolStripMenuItem,
             this.aboutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(183, 114);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Image = global::Fluctus.Properties.Resources.open;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -85,15 +87,25 @@
             // 
             this.settingsToolStripMenuItem.Image = global::Fluctus.Properties.Resources.settings;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // aFKToolStripMenuItem
+            // 
+            this.aFKToolStripMenuItem.BackColor = System.Drawing.Color.Red;
+            this.aFKToolStripMenuItem.CheckOnClick = true;
+            this.aFKToolStripMenuItem.Image = global::Fluctus.Properties.Resources.off;
+            this.aFKToolStripMenuItem.Name = "aFKToolStripMenuItem";
+            this.aFKToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.aFKToolStripMenuItem.Text = "AFK / Gaming Mode";
+            this.aFKToolStripMenuItem.Click += new System.EventHandler(this.aFKToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Image = global::Fluctus.Properties.Resources.about;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -101,7 +113,7 @@
             // 
             this.exitToolStripMenuItem.Image = global::Fluctus.Properties.Resources.exit;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -114,17 +126,6 @@
             this.label1.Size = new System.Drawing.Size(260, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Time passed using the computer:";
-            // 
-            // time2_lbl
-            // 
-            this.time2_lbl.AutoSize = true;
-            this.time2_lbl.Font = new System.Drawing.Font("Calibri", 50F);
-            this.time2_lbl.Location = new System.Drawing.Point(121, 32);
-            this.time2_lbl.Name = "time2_lbl";
-            this.time2_lbl.Size = new System.Drawing.Size(69, 82);
-            this.time2_lbl.TabIndex = 3;
-            this.time2_lbl.Text = "0";
-            this.time2_lbl.Visible = false;
             // 
             // counter
             // 
@@ -143,7 +144,7 @@
             // 
             this.finish_btn.Location = new System.Drawing.Point(12, 135);
             this.finish_btn.Name = "finish_btn";
-            this.finish_btn.Size = new System.Drawing.Size(419, 56);
+            this.finish_btn.Size = new System.Drawing.Size(335, 56);
             this.finish_btn.TabIndex = 12;
             this.finish_btn.Text = "Finish Break";
             this.finish_btn.UseVisualStyleBackColor = true;
@@ -200,7 +201,6 @@
             // 
             // reverseprog
             // 
-            this.reverseprog.Interval = 1000;
             this.reverseprog.Tick += new System.EventHandler(this.reverseprog_Tick);
             // 
             // time_lbl
@@ -239,18 +239,28 @@
             this.alarm_img.TabIndex = 13;
             this.alarm_img.TabStop = false;
             // 
+            // skip_btn
+            // 
+            this.skip_btn.Location = new System.Drawing.Point(354, 135);
+            this.skip_btn.Name = "skip_btn";
+            this.skip_btn.Size = new System.Drawing.Size(77, 56);
+            this.skip_btn.TabIndex = 20;
+            this.skip_btn.Text = "Skip";
+            this.skip_btn.UseVisualStyleBackColor = true;
+            this.skip_btn.Click += new System.EventHandler(this.skip_btn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 203);
+            this.Controls.Add(this.skip_btn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.sep_lbl);
             this.Controls.Add(this.time_lbl);
             this.Controls.Add(this.alarm_img);
             this.Controls.Add(this.breaktime_lbl);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.time2_lbl);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.finish_btn);
             this.Controls.Add(this.progressBar1);
@@ -276,7 +286,6 @@
 
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label time2_lbl;
         private System.Windows.Forms.Timer counter;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
@@ -295,5 +304,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer adder;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripMenuItem aFKToolStripMenuItem;
+        private System.Windows.Forms.Button skip_btn;
     }
 }

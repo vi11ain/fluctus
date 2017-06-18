@@ -1,4 +1,6 @@
-﻿using Fluctus.Properties;
+﻿using System.Globalization;
+using System.Resources;
+using Fluctus.Properties;
 using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
@@ -10,11 +12,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
 
 namespace Fluctus
 {
     public partial class SettingsForm : Form
     {
+        public Action yourAction { get; set; }
+        string update_Check;
+        string update_No;
+        string update_Yes;
+        string update_Title;
+        
 
         public SettingsForm()
         {
@@ -26,133 +35,79 @@ namespace Fluctus
             refresh_Lang();
         }
 
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             Settings.Default.Sound = "relax";
+            Settings.Default.Save();
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
             Settings.Default.Sound = "alarm";
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            groupBox1.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            groupBox1.Hide();
+            Settings.Default.Save();
         }
 
         private void refresh_Lang()
         {
-            this.Text = Settings.Default.Settings_Title;
-            groupBox1.Text = Settings.Default.TabName1;
-            groupBox2.Text = Settings.Default.TabName2;
-            checkBox1.Text = Settings.Default.Mode1;
-            richTextBox2.Text = Settings.Default.Mode1d;
-            checkBox2.Text = Settings.Default.Mode2;
-            richTextBox1.Text = Settings.Default.Mode2d;
-            radioButton4.Text = Settings.Default.Alert1;
-            richTextBox4.Text = Settings.Default.Alert1d;
-            radioButton3.Text = Settings.Default.Alert2;
-            richTextBox3.Text = Settings.Default.Alert2d;
+            this.Text = MainForm.res_man.GetString("contextSettings", MainForm.cul);
+            tabPage1.Text = MainForm.res_man.GetString("TabName1", MainForm.cul);
+            tabPage2.Text = MainForm.res_man.GetString("TabName2", MainForm.cul);
+            tabPage3.Text = MainForm.res_man.GetString("TabName3", MainForm.cul);
+            checkBox1.Text = MainForm.res_man.GetString("Mode1", MainForm.cul);
+            richTextBox2.Text = MainForm.res_man.GetString("Mode1d", MainForm.cul);
+            //checkBox2.Text = MainForm.res_man.GetString("Mode2", MainForm.cul);
+            //richTextBox1.Text = MainForm.res_man.GetString("Mode2d", MainForm.cul);
+            radioButton4.Text = MainForm.res_man.GetString("Alert1", MainForm.cul);
+            richTextBox4.Text = MainForm.res_man.GetString("Alert1d", MainForm.cul);
+            radioButton3.Text = MainForm.res_man.GetString("Alert2", MainForm.cul);
+            richTextBox3.Text = MainForm.res_man.GetString("Alert2d", MainForm.cul);
+            update_Check = MainForm.res_man.GetString("updateCheck", MainForm.cul);
+            update_No = MainForm.res_man.GetString("updateNo", MainForm.cul);
+            update_Yes = MainForm.res_man.GetString("updateYes", MainForm.cul);
+            update_Title = MainForm.res_man.GetString("updateTitle", MainForm.cul);
             if (Settings.Default.Sound == "alarm")
             {
                 radioButton4.Select();
-            }else
+            }
+            else
             {
                 radioButton3.Select();
             }
+            forceontop.Checked = Settings.Default.forceontop;
+            powersaving.Checked = Settings.Default.savepower;
+            note30enable.Checked = Settings.Default.note30;
+            note2enable.Checked = Settings.Default.note2;
+            textBox1.Text = Settings.Default.note30msg;
+            textBox2.Text = Settings.Default.note2msg;
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Settings.Default.Main_Title = "Fluctus";
-            Settings.Default.Message30 = "Have a break for one minute,\rwalk around you'r workspace";
-            Settings.Default.Alert1 = "Alarm Style";
-            Settings.Default.Alert1d = "A repetitive alarm sound that goes on till you end you'r break.";
-            Settings.Default.Alert2 = "Notification Style";
-            Settings.Default.Alert2d = "A relexing notification sound that goes on when you face a break.";
-            Settings.Default.ButtonText = "Finish Break";
-            Settings.Default.LabelText = "Time passed using the computer:";
-            Settings.Default.Message1 = "Have a break for 10 minutes";
-            Settings.Default.Mode1 = "Sleep Mode";
-            Settings.Default.Mode1d = "Every time you hop above 12:00 pm an alert will rise asking you to save you'r work, after you saved it the computer will shut down and if you will try to turn it on it will shutdown again";
-            Settings.Default.Mode2 = "Gaming Mode";
-            Settings.Default.Mode2d = "Showing the breaks above the video game's full screen in the left upper corner to let you know that you should take a break after this match.";
-            Settings.Default.Settings_Title = "Settings";
-            Settings.Default.TabName1 = "Modes";
-            Settings.Default.TabName2 = "Alert Types";
-            Settings.Default.Open = "Open";
-            Settings.Default.Settings_contex = "Settings";
-            Settings.Default.About = "About";
-            Settings.Default.Exit = "Exit";
-            Settings.Default.Save();
-            refresh_Lang();
-            MainForm.refresh_lang4me=true;
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Settings.Default.Main_Title = "Fluctus";
-            Settings.Default.Message30 = "קח הפסקה לדקה,\rהתהלך בסביבתך";
-            Settings.Default.Alert1 = "סגנון אזעקה";
-            Settings.Default.Alert1d = "אזעקה שחוזרת על עצמה עד שתסיים את ההפסקה שלך.";
-            Settings.Default.Alert2 = "סגנון התרעה";
-            Settings.Default.Alert2d = "צליל התרעה מרגיע שמופעל כשאתה מתחיל את ההפסקה.";
-            Settings.Default.ButtonText = "סיים הפסקה";
-            Settings.Default.LabelText = "זמן שעבר בשימוש במחשב:";
-            Settings.Default.Message1 = "קח הפסקה ל10 דקות";
-            Settings.Default.Mode1 = "מצב שינה";
-            Settings.Default.Mode1d = "Every time you hop above 12:00 pm an alert will rise asking you to save you'r work, after you saved it the computer will shut down and if you will try to turn it on it will shutdown again";
-            Settings.Default.Mode2 = "מצב משחק";
-            Settings.Default.Mode2d = "Showing the breaks above the video game's full screen in the left upper corner to let you know that you should take a break after this match.";
-            Settings.Default.Settings_Title = "הגדרות";
-            Settings.Default.TabName1 = "מצבים";
-            Settings.Default.TabName2 = "סוגי התרעות";
-            Settings.Default.Open = "פתח";
-            Settings.Default.Settings_contex = "הגדרות";
-            Settings.Default.About = "לגבי";
-            Settings.Default.Exit = "יציאה";
-            Settings.Default.Save();
-            refresh_Lang();
-            MainForm.refresh_lang4me = true;
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
         {
-            Settings.Default.Size = "big";
-            MainForm.refresh_lang4me = true;
+            Action instance = yourAction;
+            if (instance != null)
+                instance();
         }
 
         private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
         {
-            Settings.Default.Size = "small";
-            MainForm.refresh_lang4me = true;
+            Action instance = yourAction;
+            if (instance != null)
+                instance();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void english_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Checking for updates, might take up to a minute or two...");
+            MainForm.cul = new CultureInfo("en");
+            Settings.Default.lang = "en";
+            Settings.Default.Save();
+            refresh_Lang();
+            yourAction?.Invoke();
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(update_Check, update_Title);
             HtmlWeb web = new HtmlWeb();
             HtmlAgilityPack.HtmlDocument doc = web.Load("https://github.com/jugges/Take-a-Break-v2/releases");
             var xpath = "/html[1]/body[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]";
@@ -161,15 +116,68 @@ namespace Fluctus
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
             string version = fvi.FileVersion;
-            MessageBox.Show(version);
+            //MessageBox.Show(version);
             if (title == version)
             {
-                MessageBox.Show("No current updates, you are using the latest version!");
+                MessageBox.Show(update_No, update_Title);
             }
             else
             {
-                MessageBox.Show("New update found, redecting you to download page!");
+                DialogResult dialogResult = MessageBox.Show(update_Yes, update_Title, MessageBoxButtons.YesNo);
+                if (DialogResult.Yes == dialogResult)
+                {
+                    System.Diagnostics.Process.Start("https://github.com/jugges/Take-a-Break-v2/releases");
+                }
             }
+        }
+
+        private void hebrew_Click(object sender, EventArgs e)
+        {
+            MainForm.cul = new CultureInfo("he");
+            Settings.Default.lang = "he";
+            Settings.Default.Save();
+            refresh_Lang();
+            yourAction?.Invoke();
+        }
+
+        private void forceontop_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.forceontop = forceontop.Checked;
+            Settings.Default.Save();
+            yourAction?.Invoke();
+        }
+
+        private void powersaving_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.savepower = powersaving.Checked;
+            Settings.Default.Save();
+            yourAction?.Invoke();
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.note30 = note30enable.Checked;
+            Settings.Default.Save();
+            yourAction?.Invoke();
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.note2 = note2enable.Checked;
+            Settings.Default.Save();
+            yourAction?.Invoke();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            Settings.Default.note2msg = textBox2.Text;
+            Settings.Default.Save();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Settings.Default.note30msg = textBox1.Text;
+            Settings.Default.Save();
         }
     }
 }
