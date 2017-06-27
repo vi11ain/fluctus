@@ -310,6 +310,9 @@ namespace Fluctus
         {
 <<<<<<< HEAD
             if (progressBar1.Value > 0)
+=======
+            if (progressBar1.Value != 0)
+>>>>>>> 418aab9bd7c2f0edc00dcaf75290ab4cf853c8e4
                 progressBar1.Value -= 1;
             else
             {
