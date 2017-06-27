@@ -117,50 +117,77 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\red.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Alert1" xml:space="preserve">
+    <value>Alarm Style</value>
   </data>
-  <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Alert1d" xml:space="preserve">
+    <value>A repetitive alarm sound that goes on till you end you'r break.</value>
   </data>
-  <data name="about" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\about.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Alert2" xml:space="preserve">
+    <value>Notification Style</value>
   </data>
-  <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Alert2d" xml:space="preserve">
+    <value>A relexing notification sound that goes on when you face a break.</value>
   </data>
-  <data name="alarm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alarm.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ButtonText" xml:space="preserve">
+    <value>Finish Break</value>
   </data>
-  <data name="relaxing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\relaxing.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="contextAbout" xml:space="preserve">
+    <value>About</value>
   </data>
-  <data name="open" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="contextExit" xml:space="preserve">
+    <value>Exit</value>
   </data>
-  <data name="english" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\english.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="contextOpen" xml:space="preserve">
+    <value>Open</value>
   </data>
-  <data name="update" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="contextSettings" xml:space="preserve">
+    <value>Settings</value>
   </data>
-  <data name="afk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\afk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LabelText" xml:space="preserve">
+    <value>Time passed using the computer:</value>
   </data>
-  <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Message1" xml:space="preserve">
+    <value>Have a break for 10 minutes</value>
   </data>
-  <data name="hebrew" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hebrew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Message30" xml:space="preserve">
+    <value>Have a break for one minute,
+walk around you'r workspace</value>
   </data>
-  <data name="smoother" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\smoother.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Mode1" xml:space="preserve">
+    <value>Sleep Mode</value>
   </data>
-  <data name="off" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Mode1d" xml:space="preserve">
+    <value>Every time you hop above 12:00 pm an alert will rise asking you to save you'r work, after you saved it the computer will shut down and if you will try to turn it on it will shutdown again</value>
   </data>
-  <data name="on" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Mode2" xml:space="preserve">
+    <value>Gaming Mode</value>
+  </data>
+  <data name="Mode2d" xml:space="preserve">
+    <value>Showing the breaks above the video game's full screen in the left upper corner to let you know that you should take a break after this match.</value>
+  </data>
+  <data name="TabName1" xml:space="preserve">
+    <value>Modes</value>
+  </data>
+  <data name="TabName2" xml:space="preserve">
+    <value>Alert Types</value>
+  </data>
+  <data name="TabName3" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="updateCheck" xml:space="preserve">
+    <value>Checking for updates, might take up to a minute or two...</value>
+  </data>
+  <data name="updateNo" xml:space="preserve">
+    <value>No current updates, you are using the latest version!</value>
+  </data>
+  <data name="updateTitle" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="updateYes" xml:space="preserve">
+    <value>New update found, do you wish updating?</value>
+  </data>
+  <data name="skipBtn" xml:space="preserve">
+    <value>Skip</value>
   </data>
 </root>

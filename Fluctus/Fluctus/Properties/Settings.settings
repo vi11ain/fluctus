@@ -2,77 +2,29 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Fluctus.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Main_Title" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Fluctus</Value>
-    </Setting>
-    <Setting Name="Message30" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Have a break for one minute,\rwalk around you'r workspace</Value>
-    </Setting>
-    <Setting Name="Message1" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Have a break for 10 minutes</Value>
-    </Setting>
-    <Setting Name="LabelText" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Time passed using the computer:</Value>
-    </Setting>
-    <Setting Name="ButtonText" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Finish Break</Value>
-    </Setting>
-    <Setting Name="TabName1" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Modes</Value>
-    </Setting>
-    <Setting Name="TabName2" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Alert Types</Value>
-    </Setting>
-    <Setting Name="Settings_Title" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Settings</Value>
-    </Setting>
-    <Setting Name="Mode1" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Sleep Mode</Value>
-    </Setting>
-    <Setting Name="Mode2" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Gaming Mode</Value>
-    </Setting>
-    <Setting Name="Mode1d" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Every time you hop above 12:00 pm an alert will rise asking you to save you'r work, after you saved it the computer will shut down and if you will try to turn it on it will shutdown again</Value>
-    </Setting>
-    <Setting Name="Mode2d" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Showing the breaks above the video game's full screen in the left upper corner to let you know that you should take a break after this match.</Value>
-    </Setting>
-    <Setting Name="Alert1" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Alarm Style</Value>
-    </Setting>
-    <Setting Name="Alert2" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Notification Style</Value>
-    </Setting>
-    <Setting Name="Alert1d" Type="System.String" Scope="User">
-      <Value Profile="(Default)">A repetitive alarm sound that goes on till you end you'r break.</Value>
-    </Setting>
-    <Setting Name="Alert2d" Type="System.String" Scope="User">
-      <Value Profile="(Default)">A relexing notification sound that goes on when you face a break.</Value>
-    </Setting>
-    <Setting Name="Open" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Open</Value>
-    </Setting>
-    <Setting Name="Settings_contex" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Settings</Value>
-    </Setting>
-    <Setting Name="About" Type="System.String" Scope="User">
-      <Value Profile="(Default)">About</Value>
-    </Setting>
-    <Setting Name="Exit" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Exit</Value>
-    </Setting>
-    <Setting Name="About_lbl" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Take a Break v2</Value>
-    </Setting>
-    <Setting Name="About_me" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Yuval Gal</Value>
-    </Setting>
     <Setting Name="Sound" Type="System.String" Scope="User">
       <Value Profile="(Default)">relax</Value>
     </Setting>
-    <Setting Name="Size" Type="System.String" Scope="User">
-      <Value Profile="(Default)">small</Value>
+    <Setting Name="lang" Type="System.String" Scope="User">
+      <Value Profile="(Default)">he</Value>
+    </Setting>
+    <Setting Name="forceontop" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="savepower" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="note30" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="note2" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="note30msg" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="note2msg" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

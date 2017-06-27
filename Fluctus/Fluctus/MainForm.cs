@@ -2,7 +2,12 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Globalization;
 using Fluctus.Properties;
+using System.Resources;
+using System.Reflection;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace Fluctus
 {
@@ -13,20 +18,26 @@ namespace Fluctus
         TimeSpan onemin = new TimeSpan(0, 1, 0);
         TimeSpan tenmin = new TimeSpan(0, 10, 0);
         TimeSpan changeme = new TimeSpan(9, 9, 9);
-        Size breakSize;
-        Size regularSize;
+        Font regtime;
         System.IO.Stream str;
         System.Media.SoundPlayer snd;
         string m30;
         string m1;
         string displayme;
-        public static bool refresh_lang4me = false;
         public static bool settings_Alert = true;
+        public static bool forceon_Top = Settings.Default.forceontop;
+        public static bool powersaving = Settings.Default.savepower;
+        public static bool note30 = Settings.Default.note30;
+        public static bool note2 = Settings.Default.note2;
         bool in_Break = false;
         bool break_Type;
+        bool skipped = false;
+        public static ResourceManager res_man = new ResourceManager("Fluctus.Lang.lang", Assembly.Load("Fluctus"));
+        public static CultureInfo cul;
         public MainForm()
         {
             InitializeComponent();
+            regtime = time_lbl.Font;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -34,7 +45,9 @@ namespace Fluctus
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
-                Hide();
+                //Hide();
+                this.WindowState = FormWindowState.Minimized;
+                this.ShowInTaskbar = false;
             }
         }
 
@@ -42,6 +55,8 @@ namespace Fluctus
         {
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
+            PlaceLowerRight();
+            cul = new CultureInfo(Settings.Default.lang);
             lang_Refresh();
             timer.Start();
             break_Refresh();
@@ -51,17 +66,17 @@ namespace Fluctus
             System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
         }
 
-        private void lang_Refresh()
+        public void lang_Refresh()
         {
-            this.Text = Settings.Default.Main_Title;
-            label1.Text = Settings.Default.LabelText;
-            m30 = Settings.Default.Message30;
-            m1 = Settings.Default.Message1;
-            finish_btn.Text = Settings.Default.ButtonText;
-            openToolStripMenuItem.Text = Settings.Default.Open;
-            aboutToolStripMenuItem.Text = Settings.Default.About;
-            settingsToolStripMenuItem.Text = Settings.Default.Settings_contex;
-            exitToolStripMenuItem.Text = Settings.Default.Exit;
+            label1.Text = res_man.GetString("LabelText", cul);
+            m30 = res_man.GetString("Message30", cul);
+            m1 = res_man.GetString("Message1", cul);
+            finish_btn.Text = res_man.GetString("ButtonText", cul);
+            skip_btn.Text = res_man.GetString("skipBtn", cul);
+            openToolStripMenuItem.Text = res_man.GetString("contextOpen", cul);
+            aboutToolStripMenuItem.Text = res_man.GetString("contextAbout", cul);
+            settingsToolStripMenuItem.Text = res_man.GetString("contextSettings", cul);
+            exitToolStripMenuItem.Text = res_man.GetString("contextExit", cul);
             if (Settings.Default.Sound == "alarm")
             {
                 str = Properties.Resources.alarm;
@@ -71,83 +86,88 @@ namespace Fluctus
                 str = Properties.Resources.relaxing;
                 snd = new System.Media.SoundPlayer(str);
             }
-            if(Settings.Default.Size == "small")
-            {
-                regularSize= new Size(459, 140);
-                breakSize = new Size(459, 242);
-            }else
-            {
-                regularSize = new Size(559, 240);
-                breakSize = new Size(549, 342);
-                label1.Font = label4.Font;
-                label2.Font = label4.Font;
-            }
-        }
+        forceon_Top = Settings.Default.forceontop;
+        powersaving = Settings.Default.savepower;
+        note30 = Settings.Default.note30;
+        note2 = Settings.Default.note2;
+    }
 
         private void break_Refresh()
         {
             Size startsize;
-            Font startfont;
-            Point timelocation;
+            Font timesize;
+            Point timeplace;
             if (!in_Break)
             {
-                startsize = regularSize;
-                startfont = time2_lbl.Font;
-                timelocation = time2_lbl.Location;
+                startsize = new Size(459, 140);
+                timesize = regtime;
+                timeplace = new Point(184, 24);
             }
             else
             {
-                startsize = breakSize;
-                startfont = label3.Font;
-                timelocation = label3.Location;
-                //this.ShowInTaskbar = true;
+                startsize = new Size(459, 242);
+                timesize = label3.Font;
+                timeplace = new Point(277, -2);
+                this.ShowInTaskbar = true;
                 this.WindowState = FormWindowState.Normal;
-                this.Show();
+                //this.Show();
             }
 
             this.Size = startsize;
             this.MaximumSize = startsize;
             this.MinimumSize = startsize;
-            time_lbl.Font = startfont;
-            time_lbl.Location = timelocation;
             time_lbl.Visible = true;
             sep_lbl.Visible = in_Break;
             label2.Text = displayme;
             label2.Visible = in_Break;
             this.ControlBox = !in_Break;
+            time_lbl.Font = timesize;
+            time_lbl.Location = timeplace;
             breaktime_lbl.Visible = in_Break;
             progressBar1.Visible = in_Break;
             finish_btn.Visible = in_Break;
+            skip_btn.Visible = in_Break;
             alarm_img.Visible = in_Break;
+        }
+
+        private void PlaceLowerRight()
+        {
+            //Determine "rightmost" screen
+            Screen rightmost = Screen.AllScreens[0];
+            foreach (Screen screen in Screen.AllScreens)
+            {
+                if (screen.WorkingArea.Right > rightmost.WorkingArea.Right)
+                    rightmost = screen;
+            }
+
+            this.Left = rightmost.WorkingArea.Right - this.Width;
+            this.Top = rightmost.WorkingArea.Bottom - this.Height;
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (!this.Visible||this.WindowState==FormWindowState.Minimized)
+            if (this.WindowState==FormWindowState.Minimized)
             {
                 this.WindowState = FormWindowState.Normal;
-                //this.ShowInTaskbar = true;
-                this.Show();
+                this.ShowInTaskbar = true;
+                PlaceLowerRight();
+                //this.Show();
             } else
             {
-                this.Hide();
+                //this.Hide();
                 this.WindowState = FormWindowState.Minimized;
-                //this.ShowInTaskbar = false;
+                this.ShowInTaskbar = false;
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (refresh_lang4me)
-            {
-                lang_Refresh();
-                refresh_lang4me = false;
-            }
-            if (this.Visible == true)
-            {
+            //if (this.Visible == true)
+            //if (this.WindowState == FormWindowState.Normal)
+            //{
 
                 time_lbl.Text = (timer.Elapsed.ToString("hh\\:mm"));
-            }
+            //}
             if (timer.Elapsed.Minutes == 30 && progressBar1.Value == 0)
             {
                 in_Break = true;
@@ -159,9 +179,17 @@ namespace Fluctus
                 break_timer.Start();
                 prog.Start();
                 adder.Start();
-                this.Show();
+                //this.Show();
+                this.WindowState = FormWindowState.Normal;
+                this.ShowInTaskbar = true;
+                this.CenterToScreen();
                 snd.Play();
                 progressBar1.Value += 10;
+                if (note30 && Settings.Default.note30msg != "")
+                {
+                    MessageBox.Show(Settings.Default.note30msg);
+                }
+
             }
             if (timer.Elapsed.Hours != 0 && timer.Elapsed.Hours % 2 != 0 && timer.Elapsed.Minutes == 0 && progressBar1.Value == 0)
             {
@@ -174,9 +202,16 @@ namespace Fluctus
                 break_timer.Start();
                 prog.Start();
                 adder.Start();
-                this.Show();
+                //this.Show();
+                this.WindowState = FormWindowState.Normal;
+                this.ShowInTaskbar = true;
+                this.CenterToScreen();
                 snd.Play();
                 progressBar1.Value += 10;
+                if (note30 && Settings.Default.note30msg != "")
+                {
+                    MessageBox.Show(Settings.Default.note30msg);
+                }
             }
             if (timer.Elapsed.Hours != 0 && timer.Elapsed.Hours % 2 == 0 && timer.Elapsed.Minutes == 0 && progressBar1.Value == 0)
             {
@@ -189,9 +224,16 @@ namespace Fluctus
                 break_timer.Start();
                 prog.Start();
                 adder.Start();
-                this.Show();
+                //this.Show();
+                this.WindowState = FormWindowState.Normal;
+                this.ShowInTaskbar = true;
+                this.CenterToScreen();
                 snd.Play();
                 progressBar1.Value += 1;
+                if (note2 && Settings.Default.note2msg != "")
+                {
+                    MessageBox.Show(Settings.Default.note2msg);
+                }
             }
             //if (changeme.Minutes == 0 && changeme.Seconds == 0)
             //{
@@ -205,9 +247,11 @@ namespace Fluctus
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Visible = true;
+            //this.Visible = true;
+            
             this.WindowState = FormWindowState.Normal;
-            //this.ShowInTaskbar = true;
+            this.ShowInTaskbar = true;
+            PlaceLowerRight();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -218,6 +262,7 @@ namespace Fluctus
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SettingsForm settings = new SettingsForm();
+            settings.yourAction = lang_Refresh;
             settings.Visible = true;
         }
 
@@ -236,7 +281,8 @@ namespace Fluctus
 
         private void prog_Tick(object sender, EventArgs e)
         {
-            if (progressBar1.Value != 600)
+            //if (progressBar1.Value != 600)
+            if (progressBar1.Value < 600)
             {
                 if (break_Type)
                 {
@@ -256,8 +302,8 @@ namespace Fluctus
 
         private void reverseprog_Tick(object sender, EventArgs e)
         {
-            if (progressBar1.Value != 0)
-                progressBar1.Value -= 10;
+            if (progressBar1.Value > 0)
+                progressBar1.Value -= 1;
             else
             {
                 reverseprog.Stop();
@@ -278,26 +324,65 @@ namespace Fluctus
         private void adder_Tick(object sender, EventArgs e)
         {
             breaktime_lbl.Text = (changeme.ToString("mm\\:ss"));
+            if (forceon_Top)
+            {
+                this.WindowState = FormWindowState.Normal;
+                this.ShowInTaskbar = true;
+            }
             if (break_Type)
             {
-                if (break_timer.Elapsed.Minutes != 1)
-                {
+                //if (break_timer.Elapsed.Minutes >= 1)
+                //{
+                //    adder.Stop();
+                //}
+                //else
+                //{
                     changeme = onemin - break_timer.Elapsed;
-                }
-                else
-                {
-                    adder.Stop();
-                }
+                //}
             }else
             {
-                if (break_timer.Elapsed.Minutes != 10)
-                {
+                //if (break_timer.Elapsed.Minutes >= 10)
+                //{
+                //    adder.Stop();
+                //}
+                //else
+                //{
                     changeme = tenmin - break_timer.Elapsed;
-                }else
-                {
-                    adder.Stop();
-                }
+                //}
             }
+            if (!break_timer.IsRunning)
+            {
+                adder.Stop();
+            }
+        }
+
+        private void aFKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (aFKToolStripMenuItem.Checked){
+                aFKToolStripMenuItem.BackColor = Color.Lime;
+                aFKToolStripMenuItem.Image = Fluctus.Properties.Resources.on;
+                timer.Stop();
+                counter.Stop();
+            }else
+            {
+                aFKToolStripMenuItem.BackColor = Color.Red;
+                aFKToolStripMenuItem.Image = Fluctus.Properties.Resources.off;
+                timer.Start();
+                counter.Start();
+            }
+        }
+
+        private void skip_btn_Click(object sender, EventArgs e)
+        {
+            skipped = true;
+            in_Break = false;
+            break_Refresh();
+            timer.Start();
+            break_timer.Stop();
+            break_timer.Reset();
+            prog.Stop();
+            progressBar1.Value = 600;
+            reverseprog.Start();
         }
     }
 }
