@@ -205,10 +205,7 @@ namespace Fluctus
                 //this.Show();
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
-<<<<<<< HEAD
                 this.CenterToScreen();
-=======
->>>>>>> 418aab9bd7c2f0edc00dcaf75290ab4cf853c8e4
                 snd.Play();
                 progressBar1.Value += 10;
                 if (note30 && Settings.Default.note30msg != "")
@@ -230,10 +227,7 @@ namespace Fluctus
                 //this.Show();
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
-<<<<<<< HEAD
                 this.CenterToScreen();
-=======
->>>>>>> 418aab9bd7c2f0edc00dcaf75290ab4cf853c8e4
                 snd.Play();
                 progressBar1.Value += 1;
                 if (note2 && Settings.Default.note2msg != "")
@@ -308,11 +302,8 @@ namespace Fluctus
 
         private void reverseprog_Tick(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             if (progressBar1.Value > 0)
-=======
             if (progressBar1.Value != 0)
->>>>>>> 418aab9bd7c2f0edc00dcaf75290ab4cf853c8e4
                 progressBar1.Value -= 1;
             else
             {
@@ -390,11 +381,8 @@ namespace Fluctus
             timer.Start();
             break_timer.Stop();
             break_timer.Reset();
-<<<<<<< HEAD
             prog.Stop();
             progressBar1.Value = 600;
-=======
->>>>>>> 418aab9bd7c2f0edc00dcaf75290ab4cf853c8e4
             reverseprog.Start();
         }
     }
