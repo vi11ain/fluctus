@@ -142,6 +142,7 @@
             // 
             // finish_btn
             // 
+            this.finish_btn.Font = new System.Drawing.Font("Calibri Light", 15.75F);
             this.finish_btn.Location = new System.Drawing.Point(12, 135);
             this.finish_btn.Name = "finish_btn";
             this.finish_btn.Size = new System.Drawing.Size(335, 56);
@@ -241,6 +242,7 @@
             // 
             // skip_btn
             // 
+            this.skip_btn.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.skip_btn.Location = new System.Drawing.Point(354, 135);
             this.skip_btn.Name = "skip_btn";
             this.skip_btn.Size = new System.Drawing.Size(77, 56);
