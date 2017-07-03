@@ -96,7 +96,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "This Build - 0.4.0.0 - 01/05/2017";
+            this.label3.Text = "This Build - 0.4.5.0 - 03/07/2017";
             // 
             // AboutForm
             // 

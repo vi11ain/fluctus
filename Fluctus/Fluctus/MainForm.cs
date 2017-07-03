@@ -303,11 +303,13 @@ namespace Fluctus
         private void reverseprog_Tick(object sender, EventArgs e)
         {
             if (progressBar1.Value > 0)
-            if (progressBar1.Value != 0)
-                progressBar1.Value -= 1;
+            {
+                //if (progressBar1.Value != 0)
+                    progressBar1.Value -= 1;
+            }
             else
             {
-                reverseprog.Stop();
+               reverseprog.Stop();
             }
         }
 
