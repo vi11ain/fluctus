@@ -42,6 +42,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,6 +84,37 @@
     <Compile Include="SettingsForm.designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SkippedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkippedForm.Designer.cs">
+      <DependentUpon>SkippedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stats\day1.Designer.cs">
+      <DependentUpon>day1.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Stats\day2.Designer.cs">
+      <DependentUpon>day2.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Stats\day3.Designer.cs">
+      <DependentUpon>day3.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Stats\day4.Designer.cs">
+      <DependentUpon>day4.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Stats\day5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>day5.settings</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +142,9 @@
     <EmbeddedResource Include="SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SkippedForm.resx">
+      <DependentUpon>SkippedForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -120,6 +155,26 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Stats\day1.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>day1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Stats\day2.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>day2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Stats\day3.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>day3.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Stats\day4.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>day4.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Stats\day5.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>day5.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

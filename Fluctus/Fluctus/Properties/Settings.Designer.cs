@@ -62,18 +62,6 @@ namespace Fluctus.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool savepower {
-            get {
-                return ((bool)(this["savepower"]));
-            }
-            set {
-                this["savepower"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool note30 {
             get {
                 return ((bool)(this["note30"]));
@@ -116,6 +104,30 @@ namespace Fluctus.Properties {
             }
             set {
                 this["note2msg"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool forcecenter {
+            get {
+                return ((bool)(this["forcecenter"]));
+            }
+            set {
+                this["forcecenter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool savestatistics {
+            get {
+                return ((bool)(this["savestatistics"]));
+            }
+            set {
+                this["savestatistics"] = value;
             }
         }
     }

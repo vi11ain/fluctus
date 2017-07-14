@@ -26,12 +26,15 @@ namespace Fluctus
         string displayme;
         public static bool settings_Alert = true;
         public static bool forceon_Top = Settings.Default.forceontop;
-        public static bool powersaving = Settings.Default.savepower;
+        public static bool forcecenter = Settings.Default.forcecenter;
+        public static bool savestatistics = Settings.Default.savestatistics;
+        //public static bool powersaving = Settings.Default.savepower;
         public static bool note30 = Settings.Default.note30;
         public static bool note2 = Settings.Default.note2;
         bool in_Break = false;
         bool break_Type;
-        bool skipped = false;
+        //bool skipped = false;
+        int skipped = 0;
         public static ResourceManager res_man = new ResourceManager("Fluctus.Lang.lang", Assembly.Load("Fluctus"));
         public static CultureInfo cul;
         public MainForm()
@@ -53,6 +56,7 @@ namespace Fluctus
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //statisticsEngine();
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
             PlaceLowerRight();
@@ -81,16 +85,19 @@ namespace Fluctus
             {
                 str = Properties.Resources.alarm;
                 snd = new System.Media.SoundPlayer(str);
-            } else
+            }
+            else
             {
                 str = Properties.Resources.relaxing;
                 snd = new System.Media.SoundPlayer(str);
             }
-        forceon_Top = Settings.Default.forceontop;
-        powersaving = Settings.Default.savepower;
-        note30 = Settings.Default.note30;
-        note2 = Settings.Default.note2;
-    }
+            forceon_Top = Settings.Default.forceontop;
+            forcecenter = Settings.Default.forcecenter;
+            savestatistics = Settings.Default.savestatistics;
+            //powersaving = Settings.Default.savepower;
+            note30 = Settings.Default.note30;
+            note2 = Settings.Default.note2;
+        }
 
         private void break_Refresh()
         {
@@ -112,7 +119,8 @@ namespace Fluctus
                 this.WindowState = FormWindowState.Normal;
                 //this.Show();
             }
-
+            skip_btn.Enabled = true;
+            finish_btn.Enabled = false;
             this.Size = startsize;
             this.MaximumSize = startsize;
             this.MinimumSize = startsize;
@@ -146,13 +154,14 @@ namespace Fluctus
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (this.WindowState==FormWindowState.Minimized)
+            if (this.WindowState == FormWindowState.Minimized)
             {
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
                 PlaceLowerRight();
                 //this.Show();
-            } else
+            }
+            else
             {
                 //this.Hide();
                 this.WindowState = FormWindowState.Minimized;
@@ -166,7 +175,7 @@ namespace Fluctus
             //if (this.WindowState == FormWindowState.Normal)
             //{
 
-                time_lbl.Text = (timer.Elapsed.ToString("hh\\:mm"));
+            time_lbl.Text = (timer.Elapsed.ToString("hh\\:mm"));
             //}
             if (timer.Elapsed.Minutes == 30 && progressBar1.Value == 0)
             {
@@ -180,6 +189,8 @@ namespace Fluctus
                 prog.Start();
                 adder.Start();
                 //this.Show();
+                //skip_btn.Enabled = true;
+                //finish_btn.Enabled = false;
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
                 this.CenterToScreen();
@@ -203,6 +214,8 @@ namespace Fluctus
                 prog.Start();
                 adder.Start();
                 //this.Show();
+                //skip_btn.Enabled = true;
+                //finish_btn.Enabled = false;
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
                 this.CenterToScreen();
@@ -225,6 +238,8 @@ namespace Fluctus
                 prog.Start();
                 adder.Start();
                 //this.Show();
+                //skip_btn.Enabled = true;
+                //finish_btn.Enabled = false;
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
                 this.CenterToScreen();
@@ -240,7 +255,12 @@ namespace Fluctus
             if (in_Break)
             {
                 if (progressBar1.Value == 600)
+                {
+                    skip_btn.Enabled = false;
+                    finish_btn.Enabled = true;
                     break_timer.Stop();
+                }
+
             }
             //}
         }
@@ -248,7 +268,7 @@ namespace Fluctus
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //this.Visible = true;
-            
+
             this.WindowState = FormWindowState.Normal;
             this.ShowInTaskbar = true;
             PlaceLowerRight();
@@ -257,6 +277,15 @@ namespace Fluctus
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void statisticsEngine()
+        {
+            if (savestatistics)
+            {
+                DateTime today = DateTime.Today;
+                MessageBox.Show(today.ToString());
+            }
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -305,11 +334,11 @@ namespace Fluctus
             if (progressBar1.Value > 0)
             {
                 //if (progressBar1.Value != 0)
-                    progressBar1.Value -= 1;
+                progressBar1.Value -= 1;
             }
             else
             {
-               reverseprog.Stop();
+                reverseprog.Stop();
             }
         }
 
@@ -332,6 +361,10 @@ namespace Fluctus
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
             }
+            if (forcecenter)
+            {
+                this.CenterToScreen();
+            }
             if (break_Type)
             {
                 //if (break_timer.Elapsed.Minutes >= 1)
@@ -340,9 +373,10 @@ namespace Fluctus
                 //}
                 //else
                 //{
-                    changeme = onemin - break_timer.Elapsed;
+                changeme = onemin - break_timer.Elapsed;
                 //}
-            }else
+            }
+            else
             {
                 //if (break_timer.Elapsed.Minutes >= 10)
                 //{
@@ -350,7 +384,7 @@ namespace Fluctus
                 //}
                 //else
                 //{
-                    changeme = tenmin - break_timer.Elapsed;
+                changeme = tenmin - break_timer.Elapsed;
                 //}
             }
             if (!break_timer.IsRunning)
@@ -361,12 +395,14 @@ namespace Fluctus
 
         private void aFKToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (aFKToolStripMenuItem.Checked){
+            if (aFKToolStripMenuItem.Checked)
+            {
                 aFKToolStripMenuItem.BackColor = Color.Lime;
                 aFKToolStripMenuItem.Image = Fluctus.Properties.Resources.on;
                 timer.Stop();
                 counter.Stop();
-            }else
+            }
+            else
             {
                 aFKToolStripMenuItem.BackColor = Color.Red;
                 aFKToolStripMenuItem.Image = Fluctus.Properties.Resources.off;
@@ -377,7 +413,7 @@ namespace Fluctus
 
         private void skip_btn_Click(object sender, EventArgs e)
         {
-            skipped = true;
+            //skipped = true;
             in_Break = false;
             break_Refresh();
             timer.Start();

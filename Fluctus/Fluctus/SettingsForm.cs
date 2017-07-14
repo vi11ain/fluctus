@@ -74,7 +74,10 @@ namespace Fluctus
                 radioButton3.Select();
             }
             forceontop.Checked = Settings.Default.forceontop;
-            powersaving.Checked = Settings.Default.savepower;
+            forcecenter.Checked = Settings.Default.forcecenter;
+            savestatistics.Checked = Settings.Default.savestatistics;
+            statistics.Visible = savestatistics.Checked;
+            //powersaving.Checked = Settings.Default.savepower;
             note30enable.Checked = Settings.Default.note30;
             note2enable.Checked = Settings.Default.note2;
             textBox1.Text = Settings.Default.note30msg;
@@ -149,7 +152,7 @@ namespace Fluctus
 
         private void powersaving_CheckedChanged(object sender, EventArgs e)
         {
-            Settings.Default.savepower = powersaving.Checked;
+            //Settings.Default.savepower = powersaving.Checked;
             Settings.Default.Save();
             yourAction?.Invoke();
         }
@@ -178,6 +181,21 @@ namespace Fluctus
         {
             Settings.Default.note30msg = textBox1.Text;
             Settings.Default.Save();
+        }
+
+        private void forcecenter_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.forcecenter = forcecenter.Checked;
+            Settings.Default.Save();
+            yourAction?.Invoke();
+        }
+
+        private void savestatistics_CheckedChanged(object sender, EventArgs e)
+        {
+            statistics.Visible = savestatistics.Checked;
+            Settings.Default.savestatistics = savestatistics.Checked;
+            Settings.Default.Save();
+            yourAction?.Invoke();
         }
     }
 }
