@@ -121,13 +121,24 @@ namespace Fluctus.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool savestatistics {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool gamemode {
             get {
-                return ((bool)(this["savestatistics"]));
+                return ((bool)(this["gamemode"]));
             }
             set {
-                this["savestatistics"] = value;
+                this["gamemode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Generic.List<System.String> processlist {
+            get {
+                return ((global::System.Collections.Generic.List<System.String>)(this["processlist"]));
+            }
+            set {
+                this["processlist"] = value;
             }
         }
     }

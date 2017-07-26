@@ -8,6 +8,8 @@ using System.Resources;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Threading;
+using System.IO;
+using System.Media;
 
 namespace Fluctus
 {
@@ -19,22 +21,16 @@ namespace Fluctus
         TimeSpan tenmin = new TimeSpan(0, 10, 0);
         TimeSpan changeme = new TimeSpan(9, 9, 9);
         Font regtime;
-        System.IO.Stream str;
-        System.Media.SoundPlayer snd;
+        Stream str;
+        SoundPlayer snd;
         string m30;
         string m1;
         string displayme;
         public static bool settings_Alert = true;
-        public static bool forceon_Top = Settings.Default.forceontop;
-        public static bool forcecenter = Settings.Default.forcecenter;
-        public static bool savestatistics = Settings.Default.savestatistics;
+        public static bool gamemode = Settings.Default.gamemode;
         //public static bool powersaving = Settings.Default.savepower;
-        public static bool note30 = Settings.Default.note30;
-        public static bool note2 = Settings.Default.note2;
         bool in_Break = false;
         bool break_Type;
-        //bool skipped = false;
-        int skipped = 0;
         public static ResourceManager res_man = new ResourceManager("Fluctus.Lang.lang", Assembly.Load("Fluctus"));
         public static CultureInfo cul;
         public MainForm()
@@ -67,7 +63,6 @@ namespace Fluctus
             sep_lbl.AutoSize = false;
             sep_lbl.Height = 2;
             sep_lbl.BorderStyle = BorderStyle.Fixed3D;
-            System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
         }
 
         public void lang_Refresh()
@@ -81,22 +76,17 @@ namespace Fluctus
             aboutToolStripMenuItem.Text = res_man.GetString("contextAbout", cul);
             settingsToolStripMenuItem.Text = res_man.GetString("contextSettings", cul);
             exitToolStripMenuItem.Text = res_man.GetString("contextExit", cul);
-            if (Settings.Default.Sound == "alarm")
-            {
-                str = Properties.Resources.alarm;
-                snd = new System.Media.SoundPlayer(str);
-            }
-            else
+            if (Settings.Default.Sound == "relaxing")
             {
                 str = Properties.Resources.relaxing;
                 snd = new System.Media.SoundPlayer(str);
             }
-            forceon_Top = Settings.Default.forceontop;
-            forcecenter = Settings.Default.forcecenter;
-            savestatistics = Settings.Default.savestatistics;
+            //forceon_Top = Settings.Default.forceontop;
+            //forcecenter = Settings.Default.forcecenter;
+            //gamemode = Settings.Default.gamemode;
             //powersaving = Settings.Default.savepower;
-            note30 = Settings.Default.note30;
-            note2 = Settings.Default.note2;
+            //note30 = Settings.Default.note30;
+            //note2 = Settings.Default.note2;
         }
 
         private void break_Refresh()
@@ -169,6 +159,18 @@ namespace Fluctus
             }
         }
 
+        private bool checkprocess(string pn, bool prev)
+        {
+            Process[] pname = Process.GetProcessesByName(pn);
+            if (pname.Length != 0)
+            {
+                return prev | true;
+            }
+            return prev | false;
+            //insert recursion here!
+            recursion
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             //if (this.Visible == true)
@@ -177,33 +179,24 @@ namespace Fluctus
 
             time_lbl.Text = (timer.Elapsed.ToString("hh\\:mm"));
             //}
+            if (Settings.Default.gamemode)
+            {
+                bool prev = false;
+                for(int i = 0; i < Settings.Default.processlist.Count; i++)
+                {
+                    checkprocess(Settings.Default.processlist.ToArray().GetValue(i).ToString(), prev);
+                }
+            }
             if (timer.Elapsed.Minutes == 30 && progressBar1.Value == 0)
             {
-                in_Break = true;
-                break_Type = true;
-                progressBar1.Maximum = 600;
-                displayme = m30;
-                break_Refresh();
-                timer.Stop();
-                break_timer.Start();
-                prog.Start();
-                adder.Start();
-                //this.Show();
-                //skip_btn.Enabled = true;
-                //finish_btn.Enabled = false;
-                this.WindowState = FormWindowState.Normal;
-                this.ShowInTaskbar = true;
-                this.CenterToScreen();
-                snd.Play();
-                progressBar1.Value += 10;
-                if (note30 && Settings.Default.note30msg != "")
-                {
-                    MessageBox.Show(Settings.Default.note30msg);
-                }
-
+                func30();
             }
             if (timer.Elapsed.Hours != 0 && timer.Elapsed.Hours % 2 != 0 && timer.Elapsed.Minutes == 0 && progressBar1.Value == 0)
             {
+                func30();
+            }
+            void func30()
+            {
                 in_Break = true;
                 break_Type = true;
                 progressBar1.Maximum = 600;
@@ -219,13 +212,17 @@ namespace Fluctus
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
                 this.CenterToScreen();
-                snd.Play();
+                if (Settings.Default.Sound == "relaxing")
+                {
+                    snd.Play();
+                }
                 progressBar1.Value += 10;
-                if (note30 && Settings.Default.note30msg != "")
+                if (Settings.Default.note30 && Settings.Default.note30msg != "")
                 {
                     MessageBox.Show(Settings.Default.note30msg);
                 }
             }
+
             if (timer.Elapsed.Hours != 0 && timer.Elapsed.Hours % 2 == 0 && timer.Elapsed.Minutes == 0 && progressBar1.Value == 0)
             {
                 in_Break = true;
@@ -243,9 +240,12 @@ namespace Fluctus
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
                 this.CenterToScreen();
-                snd.Play();
+                if (Settings.Default.Sound == "relaxing")
+                {
+                    snd.Play();
+                }
                 progressBar1.Value += 1;
-                if (note2 && Settings.Default.note2msg != "")
+                if (Settings.Default.note2 && Settings.Default.note2msg != "")
                 {
                     MessageBox.Show(Settings.Default.note2msg);
                 }
@@ -277,15 +277,6 @@ namespace Fluctus
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void statisticsEngine()
-        {
-            if (savestatistics)
-            {
-                DateTime today = DateTime.Today;
-                MessageBox.Show(today.ToString());
-            }
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -356,12 +347,12 @@ namespace Fluctus
         private void adder_Tick(object sender, EventArgs e)
         {
             breaktime_lbl.Text = (changeme.ToString("mm\\:ss"));
-            if (forceon_Top)
+            if (Settings.Default.forceontop)
             {
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
             }
-            if (forcecenter)
+            if (Settings.Default.forcecenter)
             {
                 this.CenterToScreen();
             }

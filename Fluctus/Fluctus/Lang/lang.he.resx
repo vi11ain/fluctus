@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Alert1" xml:space="preserve">
-    <value>סגנון אזעקה</value>
+    <value>בלי סאונד</value>
   </data>
   <data name="Alert1d" xml:space="preserve">
-    <value>.אזעקה שחוזרת על עצמה עד שתסיים את ההפסקה שלך</value>
+    <value>.סאונד לא יופעל כאשר אתה מתחיל הפסקה</value>
   </data>
   <data name="Alert2" xml:space="preserve">
     <value>סגנון התרעה</value>
@@ -153,21 +153,6 @@
   <data name="Message30" xml:space="preserve">
     <value>,קח הפסקה לדקה
 התהלך בסביבתך</value>
-  </data>
-  <data name="Mode1" xml:space="preserve">
-    <value>מצב שינה</value>
-  </data>
-  <data name="Mode1d" xml:space="preserve">
-    <value>Every time you hop above 12:00 pm an alert will rise asking you to save you'r work, after you saved it the computer will shut down and if you will try to turn it on it will shutdown again</value>
-  </data>
-  <data name="Mode2" xml:space="preserve">
-    <value>מצב משחק</value>
-  </data>
-  <data name="Mode2d" xml:space="preserve">
-    <value>Showing the breaks above the video game's full screen in the left upper corner to let you know that you should take a break after this match.</value>
-  </data>
-  <data name="TabName1" xml:space="preserve">
-    <value>מצבים</value>
   </data>
   <data name="TabName2" xml:space="preserve">
     <value>סוגי התרעות</value>

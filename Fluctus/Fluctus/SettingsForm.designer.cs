@@ -28,15 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -45,9 +38,10 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.update = new System.Windows.Forms.PictureBox();
-            this.forceontop = new System.Windows.Forms.CheckBox();
             this.hebrew = new System.Windows.Forms.PictureBox();
             this.english = new System.Windows.Forms.PictureBox();
+            this.forceontop = new System.Windows.Forms.CheckBox();
+            this.forcecenter = new System.Windows.Forms.CheckBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.note2enable = new System.Windows.Forms.CheckBox();
@@ -56,11 +50,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.note30enable = new System.Windows.Forms.CheckBox();
-            this.savestatistics = new System.Windows.Forms.CheckBox();
-            this.statistics = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.forcecenter = new System.Windows.Forms.CheckBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.sleepmodeenable = new System.Windows.Forms.CheckBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.savelistbtn = new System.Windows.Forms.Button();
+            this.processlist = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.gamemodeenable = new System.Windows.Forms.CheckBox();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -69,58 +69,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.english)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statistics)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(797, 263);
             this.tabControl1.TabIndex = 12;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.richTextBox2);
-            this.tabPage1.Controls.Add(this.checkBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(789, 237);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Modes";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.richTextBox2.Font = new System.Drawing.Font("Calibri", 11.25F);
-            this.richTextBox2.Location = new System.Drawing.Point(3, 25);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(783, 68);
-            this.richTextBox2.TabIndex = 14;
-            this.richTextBox2.Text = "Every time you hop above 12:00 pm an alert will rise asking you to save you\'r wor" +
-    "k, after you saved it the computer will shut down and if you will try to turn it" +
-    " on it will shutdown again";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBox1.Font = new System.Drawing.Font("Calibri", 11.25F);
-            this.checkBox1.Location = new System.Drawing.Point(3, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(783, 22);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Sleep Mode";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -150,14 +115,17 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
+            this.radioButton3.Checked = true;
             this.radioButton3.Dock = System.Windows.Forms.DockStyle.Top;
             this.radioButton3.Font = new System.Drawing.Font("Calibri", 11.25F);
             this.radioButton3.Location = new System.Drawing.Point(3, 92);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(783, 22);
             this.radioButton3.TabIndex = 5;
+            this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Notification Style";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged_1);
             // 
             // richTextBox4
             // 
@@ -168,21 +136,20 @@
             this.richTextBox4.ReadOnly = true;
             this.richTextBox4.Size = new System.Drawing.Size(783, 67);
             this.richTextBox4.TabIndex = 6;
-            this.richTextBox4.Text = "A repetitive alarm sound that goes on till you end you\'r break.";
+            this.richTextBox4.Text = "Sound will not play while break is starting.";
             // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Checked = true;
             this.radioButton4.Dock = System.Windows.Forms.DockStyle.Top;
             this.radioButton4.Font = new System.Drawing.Font("Calibri", 11.25F);
             this.radioButton4.Location = new System.Drawing.Point(3, 3);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(783, 22);
             this.radioButton4.TabIndex = 4;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Alarm Style";
+            this.radioButton4.Text = "No Sound";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged_1);
             // 
             // tabPage3
             // 
@@ -203,9 +170,7 @@
             this.tableLayoutPanel2.Controls.Add(this.update, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.hebrew, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.english, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.statistics, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.forceontop, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.savestatistics, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.forcecenter, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
@@ -231,17 +196,6 @@
             this.update.TabStop = false;
             this.update.Click += new System.EventHandler(this.update_Click);
             // 
-            // forceontop
-            // 
-            this.forceontop.AutoSize = true;
-            this.forceontop.Location = new System.Drawing.Point(60, 3);
-            this.forceontop.Name = "forceontop";
-            this.forceontop.Size = new System.Drawing.Size(154, 17);
-            this.forceontop.TabIndex = 18;
-            this.forceontop.Text = "Force on-top while in break";
-            this.forceontop.UseVisualStyleBackColor = true;
-            this.forceontop.CheckedChanged += new System.EventHandler(this.forceontop_CheckedChanged);
-            // 
             // hebrew
             // 
             this.hebrew.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -265,6 +219,28 @@
             this.english.TabIndex = 20;
             this.english.TabStop = false;
             this.english.Click += new System.EventHandler(this.english_Click);
+            // 
+            // forceontop
+            // 
+            this.forceontop.AutoSize = true;
+            this.forceontop.Location = new System.Drawing.Point(60, 3);
+            this.forceontop.Name = "forceontop";
+            this.forceontop.Size = new System.Drawing.Size(154, 17);
+            this.forceontop.TabIndex = 18;
+            this.forceontop.Text = "Force on-top while in break";
+            this.forceontop.UseVisualStyleBackColor = true;
+            this.forceontop.CheckedChanged += new System.EventHandler(this.forceontop_CheckedChanged);
+            // 
+            // forcecenter
+            // 
+            this.forcecenter.AutoSize = true;
+            this.forcecenter.Location = new System.Drawing.Point(60, 31);
+            this.forcecenter.Name = "forcecenter";
+            this.forcecenter.Size = new System.Drawing.Size(154, 17);
+            this.forcecenter.TabIndex = 25;
+            this.forcecenter.Text = "Force center while in break";
+            this.forcecenter.UseVisualStyleBackColor = true;
+            this.forcecenter.CheckedChanged += new System.EventHandler(this.forcecenter_CheckedChanged);
             // 
             // tabPage4
             // 
@@ -362,64 +338,115 @@
             this.note30enable.UseVisualStyleBackColor = true;
             this.note30enable.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // savestatistics
+            // tabPage5
             // 
-            this.savestatistics.AutoSize = true;
-            this.savestatistics.Location = new System.Drawing.Point(60, 59);
-            this.savestatistics.Name = "savestatistics";
-            this.savestatistics.Size = new System.Drawing.Size(159, 17);
-            this.savestatistics.TabIndex = 23;
-            this.savestatistics.Text = "Save Statistics (Local Save)";
-            this.savestatistics.UseVisualStyleBackColor = true;
-            this.savestatistics.CheckedChanged += new System.EventHandler(this.savestatistics_CheckedChanged);
+            this.tabPage5.Controls.Add(this.richTextBox5);
+            this.tabPage5.Controls.Add(this.sleepmodeenable);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(789, 237);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Sleep Mode";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // statistics
+            // richTextBox5
             // 
-            this.statistics.BackSecondaryColor = System.Drawing.Color.Cyan;
-            this.statistics.BorderlineColor = System.Drawing.Color.Black;
-            this.statistics.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea1.Name = "ChartArea1";
-            this.statistics.ChartAreas.Add(chartArea1);
-            this.statistics.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.statistics.Legends.Add(legend1);
-            this.statistics.Location = new System.Drawing.Point(60, 112);
-            this.statistics.Name = "statistics";
-            this.statistics.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series1.BorderWidth = 2;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.IsValueShownAsLabel = true;
-            series1.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series1.Legend = "Legend1";
-            series1.Name = "Number Of Breaks Skipped";
-            series2.BorderWidth = 2;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
-            series2.IsValueShownAsLabel = true;
-            series2.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series2.Legend = "Legend1";
-            series2.Name = "Number Of Breaks Taken";
-            this.statistics.Series.Add(series1);
-            this.statistics.Series.Add(series2);
-            this.statistics.Size = new System.Drawing.Size(720, 116);
-            this.statistics.TabIndex = 24;
-            this.statistics.Text = "Times Skipped";
+            this.richTextBox5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.richTextBox5.Font = new System.Drawing.Font("Calibri", 11.25F);
+            this.richTextBox5.Location = new System.Drawing.Point(3, 25);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.ReadOnly = true;
+            this.richTextBox5.Size = new System.Drawing.Size(783, 68);
+            this.richTextBox5.TabIndex = 15;
+            this.richTextBox5.Text = "Every time you hop above a set time an alert will rise asking you to save you\'r w" +
+    "ork, after you saved it the computer will shut down and if you will try to turn " +
+    "it on it will shutdown again";
             // 
-            // forcecenter
+            // sleepmodeenable
             // 
-            this.forcecenter.AutoSize = true;
-            this.forcecenter.Location = new System.Drawing.Point(60, 31);
-            this.forcecenter.Name = "forcecenter";
-            this.forcecenter.Size = new System.Drawing.Size(154, 17);
-            this.forcecenter.TabIndex = 25;
-            this.forcecenter.Text = "Force center while in break";
-            this.forcecenter.UseVisualStyleBackColor = true;
-            this.forcecenter.CheckedChanged += new System.EventHandler(this.forcecenter_CheckedChanged);
+            this.sleepmodeenable.AutoSize = true;
+            this.sleepmodeenable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sleepmodeenable.Font = new System.Drawing.Font("Calibri", 11.25F);
+            this.sleepmodeenable.Location = new System.Drawing.Point(3, 3);
+            this.sleepmodeenable.Name = "sleepmodeenable";
+            this.sleepmodeenable.Size = new System.Drawing.Size(783, 22);
+            this.sleepmodeenable.TabIndex = 17;
+            this.sleepmodeenable.Text = "Enabled?";
+            this.sleepmodeenable.UseVisualStyleBackColor = true;
+            this.sleepmodeenable.CheckedChanged += new System.EventHandler(this.sleepmodeenable_CheckedChanged);
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.savelistbtn);
+            this.tabPage6.Controls.Add(this.processlist);
+            this.tabPage6.Controls.Add(this.label1);
+            this.tabPage6.Controls.Add(this.richTextBox1);
+            this.tabPage6.Controls.Add(this.gamemodeenable);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(789, 237);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Game Mode";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // savelistbtn
+            // 
+            this.savelistbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.savelistbtn.Location = new System.Drawing.Point(3, 214);
+            this.savelistbtn.Name = "savelistbtn";
+            this.savelistbtn.Size = new System.Drawing.Size(783, 23);
+            this.savelistbtn.TabIndex = 22;
+            this.savelistbtn.Text = "Save list";
+            this.savelistbtn.UseVisualStyleBackColor = true;
+            this.savelistbtn.Click += new System.EventHandler(this.savelistbtn_Click);
+            // 
+            // processlist
+            // 
+            this.processlist.Dock = System.Windows.Forms.DockStyle.Top;
+            this.processlist.Location = new System.Drawing.Point(3, 106);
+            this.processlist.Multiline = true;
+            this.processlist.Name = "processlist";
+            this.processlist.Size = new System.Drawing.Size(783, 108);
+            this.processlist.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Location = new System.Drawing.Point(3, 93);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(403, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "List of games\' process name to look out for: (Seperate each process with a new li" +
+    "ne)";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.richTextBox1.Font = new System.Drawing.Font("Calibri", 11.25F);
+            this.richTextBox1.Location = new System.Drawing.Point(3, 25);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(783, 68);
+            this.richTextBox1.TabIndex = 15;
+            this.richTextBox1.Text = "Checks if games are running or not, if they do then Fluctus will automatically se" +
+    "t it self to AFK and you will not receive notifications about breaks till you fi" +
+    "nish gaming.";
+            // 
+            // gamemodeenable
+            // 
+            this.gamemodeenable.AutoSize = true;
+            this.gamemodeenable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gamemodeenable.Font = new System.Drawing.Font("Calibri", 11.25F);
+            this.gamemodeenable.Location = new System.Drawing.Point(3, 3);
+            this.gamemodeenable.Name = "gamemodeenable";
+            this.gamemodeenable.Size = new System.Drawing.Size(783, 22);
+            this.gamemodeenable.TabIndex = 18;
+            this.gamemodeenable.Text = "Enabled?";
+            this.gamemodeenable.UseVisualStyleBackColor = true;
+            this.gamemodeenable.CheckedChanged += new System.EventHandler(this.gamemodeenable_CheckedChanged);
             // 
             // SettingsForm
             // 
@@ -436,8 +463,6 @@
             this.TopMost = true;
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -449,21 +474,21 @@
             this.tabPage4.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statistics)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RichTextBox richTextBox4;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -478,8 +503,16 @@
         private System.Windows.Forms.CheckBox forceontop;
         private System.Windows.Forms.PictureBox hebrew;
         private System.Windows.Forms.PictureBox english;
-        private System.Windows.Forms.DataVisualization.Charting.Chart statistics;
-        private System.Windows.Forms.CheckBox savestatistics;
         private System.Windows.Forms.CheckBox forcecenter;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox5;
+        private System.Windows.Forms.CheckBox sleepmodeenable;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox gamemodeenable;
+        private System.Windows.Forms.Button savelistbtn;
+        private System.Windows.Forms.TextBox processlist;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }

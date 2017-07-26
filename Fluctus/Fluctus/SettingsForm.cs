@@ -35,26 +35,11 @@ namespace Fluctus
             refresh_Lang();
         }
 
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings.Default.Sound = "relax";
-            Settings.Default.Save();
-        }
-
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings.Default.Sound = "alarm";
-            Settings.Default.Save();
-        }
-
         private void refresh_Lang()
         {
             this.Text = MainForm.res_man.GetString("contextSettings", MainForm.cul);
-            tabPage1.Text = MainForm.res_man.GetString("TabName1", MainForm.cul);
             tabPage2.Text = MainForm.res_man.GetString("TabName2", MainForm.cul);
             tabPage3.Text = MainForm.res_man.GetString("TabName3", MainForm.cul);
-            checkBox1.Text = MainForm.res_man.GetString("Mode1", MainForm.cul);
-            richTextBox2.Text = MainForm.res_man.GetString("Mode1d", MainForm.cul);
             //checkBox2.Text = MainForm.res_man.GetString("Mode2", MainForm.cul);
             //richTextBox1.Text = MainForm.res_man.GetString("Mode2d", MainForm.cul);
             radioButton4.Text = MainForm.res_man.GetString("Alert1", MainForm.cul);
@@ -75,28 +60,13 @@ namespace Fluctus
             }
             forceontop.Checked = Settings.Default.forceontop;
             forcecenter.Checked = Settings.Default.forcecenter;
-            savestatistics.Checked = Settings.Default.savestatistics;
-            statistics.Visible = savestatistics.Checked;
             //powersaving.Checked = Settings.Default.savepower;
             note30enable.Checked = Settings.Default.note30;
             note2enable.Checked = Settings.Default.note2;
             textBox1.Text = Settings.Default.note30msg;
             textBox2.Text = Settings.Default.note2msg;
-        }
-
-
-        private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
-        {
-            Action instance = yourAction;
-            if (instance != null)
-                instance();
-        }
-
-        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
-        {
-            Action instance = yourAction;
-            if (instance != null)
-                instance();
+            gamemodeenable.Checked = Settings.Default.gamemode;
+            processlist.Text = string.Join(Environment.NewLine, Settings.Default.processlist.ToArray());
         }
 
         private void english_Click(object sender, EventArgs e)
@@ -147,28 +117,28 @@ namespace Fluctus
         {
             Settings.Default.forceontop = forceontop.Checked;
             Settings.Default.Save();
-            yourAction?.Invoke();
+            //yourAction?.Invoke();
         }
 
         private void powersaving_CheckedChanged(object sender, EventArgs e)
         {
             //Settings.Default.savepower = powersaving.Checked;
-            Settings.Default.Save();
-            yourAction?.Invoke();
+            //Settings.Default.Save();
+            //yourAction?.Invoke();
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             Settings.Default.note30 = note30enable.Checked;
             Settings.Default.Save();
-            yourAction?.Invoke();
+            //yourAction?.Invoke();
         }
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
             Settings.Default.note2 = note2enable.Checked;
             Settings.Default.Save();
-            yourAction?.Invoke();
+            //yourAction?.Invoke();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -187,15 +157,62 @@ namespace Fluctus
         {
             Settings.Default.forcecenter = forcecenter.Checked;
             Settings.Default.Save();
+            //yourAction?.Invoke();
+        }
+
+        private void radioButton4_CheckedChanged_1(object sender, EventArgs e)
+        {
+            Settings.Default.Sound = "nosound";
+            Settings.Default.Save();
             yourAction?.Invoke();
         }
 
-        private void savestatistics_CheckedChanged(object sender, EventArgs e)
+        private void radioButton3_CheckedChanged_1(object sender, EventArgs e)
         {
-            statistics.Visible = savestatistics.Checked;
-            Settings.Default.savestatistics = savestatistics.Checked;
+            Settings.Default.Sound = "relax";
             Settings.Default.Save();
             yourAction?.Invoke();
+        }
+
+        private void savelistbtn_Click(object sender, EventArgs e)
+        {
+            Settings.Default.processlist = new List<string>();
+            if (!processlist.Text.Equals(""))
+            {
+                foreach (var myString in processlist.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    Settings.Default.processlist.Add(myString);
+                    Settings.Default.Save();
+                    //yourAction?.Invoke();
+                }
+            }
+            else
+            {
+                gamemodeenable.Checked = false;
+            }
+        }
+
+        private void gamemodeenable_CheckedChanged(object sender, EventArgs e)
+        {
+            if (gamemodeenable.Checked)
+            {
+                if (Settings.Default.processlist.Count != 0)
+                {
+                    Settings.Default.gamemode = gamemodeenable.Checked;
+                    Settings.Default.Save();
+                    //yourAction?.Invoke();
+                }
+                else
+                {
+                    MessageBox.Show("Hi hi hi! You need to have a list of processes to look out for before enabling game mode! create a list and then hit the save button.");
+                    gamemodeenable.Checked = false;
+                }
+            }
+        }
+
+        private void sleepmodeenable_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
