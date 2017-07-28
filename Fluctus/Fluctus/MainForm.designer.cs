@@ -52,6 +52,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.alarm_img = new System.Windows.Forms.PictureBox();
             this.skip_btn = new System.Windows.Forms.Button();
+            this.gamemodechecker = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alarm_img)).BeginInit();
             this.SuspendLayout();
@@ -73,13 +74,13 @@
             this.aboutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 114);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Image = global::Fluctus.Properties.Resources.open;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -87,7 +88,7 @@
             // 
             this.settingsToolStripMenuItem.Image = global::Fluctus.Properties.Resources.settings;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -97,15 +98,15 @@
             this.aFKToolStripMenuItem.CheckOnClick = true;
             this.aFKToolStripMenuItem.Image = global::Fluctus.Properties.Resources.off;
             this.aFKToolStripMenuItem.Name = "aFKToolStripMenuItem";
-            this.aFKToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aFKToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aFKToolStripMenuItem.Text = "AFK";
-            this.aFKToolStripMenuItem.Click += new System.EventHandler(this.aFKToolStripMenuItem_Click);
+            this.aFKToolStripMenuItem.CheckedChanged += new System.EventHandler(this.aFKToolStripMenuItem_CheckedChanged);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Image = global::Fluctus.Properties.Resources.about;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -113,7 +114,7 @@
             // 
             this.exitToolStripMenuItem.Image = global::Fluctus.Properties.Resources.exit;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -251,6 +252,11 @@
             this.skip_btn.UseVisualStyleBackColor = true;
             this.skip_btn.Click += new System.EventHandler(this.skip_btn_Click);
             // 
+            // gamemodechecker
+            // 
+            this.gamemodechecker.Interval = 1000;
+            this.gamemodechecker.Tick += new System.EventHandler(this.gamemodechecker_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,5 +314,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem aFKToolStripMenuItem;
         private System.Windows.Forms.Button skip_btn;
+        private System.Windows.Forms.Timer gamemodechecker;
     }
 }

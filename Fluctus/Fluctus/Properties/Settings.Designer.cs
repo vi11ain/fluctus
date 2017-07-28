@@ -141,5 +141,17 @@ namespace Fluctus.Properties {
                 this["processlist"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isprocesslistset {
+            get {
+                return ((bool)(this["isprocesslistset"]));
+            }
+            set {
+                this["isprocesslistset"] = value;
+            }
+        }
     }
 }

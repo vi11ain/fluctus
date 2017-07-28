@@ -32,6 +32,12 @@ namespace Fluctus
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
+            if (!Settings.Default.isprocesslistset)
+            {
+                Settings.Default.processlist = new List<string>();
+                Settings.Default.isprocesslistset = true;
+                Settings.Default.Save();
+            }
             refresh_Lang();
         }
 
@@ -176,11 +182,11 @@ namespace Fluctus
 
         private void savelistbtn_Click(object sender, EventArgs e)
         {
-            Settings.Default.processlist = new List<string>();
             if (!processlist.Text.Equals(""))
             {
                 foreach (var myString in processlist.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries))
                 {
+                    Settings.Default.processlist = new List<string>();
                     Settings.Default.processlist.Add(myString);
                     Settings.Default.Save();
                     //yourAction?.Invoke();
@@ -189,6 +195,8 @@ namespace Fluctus
             else
             {
                 gamemodeenable.Checked = false;
+                Settings.Default.gamemode = false;
+                yourAction?.Invoke();
             }
         }
 
@@ -200,7 +208,6 @@ namespace Fluctus
                 {
                     Settings.Default.gamemode = gamemodeenable.Checked;
                     Settings.Default.Save();
-                    //yourAction?.Invoke();
                 }
                 else
                 {
@@ -208,6 +215,11 @@ namespace Fluctus
                     gamemodeenable.Checked = false;
                 }
             }
+            else
+            {
+                Settings.Default.gamemode = false;
+            }
+            yourAction?.Invoke();
         }
 
         private void sleepmodeenable_CheckedChanged(object sender, EventArgs e)

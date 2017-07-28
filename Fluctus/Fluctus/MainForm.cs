@@ -81,6 +81,16 @@ namespace Fluctus
                 str = Properties.Resources.relaxing;
                 snd = new System.Media.SoundPlayer(str);
             }
+            if (Settings.Default.gamemode&&!gamemodechecker.Enabled)
+            {
+                gamemodechecker.Start();
+            }
+            else if(!Settings.Default.gamemode && gamemodechecker.Enabled)
+            {
+                gamemodechecker.Stop();
+                aFKToolStripMenuItem.Checked = false;
+
+            }
             //forceon_Top = Settings.Default.forceontop;
             //forcecenter = Settings.Default.forcecenter;
             //gamemode = Settings.Default.gamemode;
@@ -159,16 +169,19 @@ namespace Fluctus
             }
         }
 
-        private bool checkprocess(string pn, bool prev)
+        private bool checkprocess(int place, bool prev)
         {
-            Process[] pname = Process.GetProcessesByName(pn);
+            if(place>= Settings.Default.processlist.Count)
+            {
+                return prev;
+            }
+            Process[] pname = Process.GetProcessesByName(Settings.Default.processlist.ToArray().GetValue(place).ToString());
             if (pname.Length != 0)
             {
-                return prev | true;
+                return true;
             }
-            return prev | false;
-            //insert recursion here!
-            recursion
+            place++;
+            return checkprocess(place, prev | false);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -179,14 +192,6 @@ namespace Fluctus
 
             time_lbl.Text = (timer.Elapsed.ToString("hh\\:mm"));
             //}
-            if (Settings.Default.gamemode)
-            {
-                bool prev = false;
-                for(int i = 0; i < Settings.Default.processlist.Count; i++)
-                {
-                    checkprocess(Settings.Default.processlist.ToArray().GetValue(i).ToString(), prev);
-                }
-            }
             if (timer.Elapsed.Minutes == 30 && progressBar1.Value == 0)
             {
                 func30();
@@ -384,7 +389,38 @@ namespace Fluctus
             }
         }
 
-        private void aFKToolStripMenuItem_Click(object sender, EventArgs e)
+        //private void aFKToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    if (aFKToolStripMenuItem.Checked)
+        //    {
+        //        aFKToolStripMenuItem.BackColor = Color.Lime;
+        //        aFKToolStripMenuItem.Image = Fluctus.Properties.Resources.on;
+        //        timer.Stop();
+        //        counter.Stop();
+        //    }
+        //    else
+        //    {
+        //        aFKToolStripMenuItem.BackColor = Color.Red;
+        //        aFKToolStripMenuItem.Image = Fluctus.Properties.Resources.off;
+        //        timer.Start();
+        //        counter.Start();
+        //    }
+        //}
+
+        private void skip_btn_Click(object sender, EventArgs e)
+        {
+            //skipped = true;
+            in_Break = false;
+            break_Refresh();
+            timer.Start();
+            break_timer.Stop();
+            break_timer.Reset();
+            prog.Stop();
+            progressBar1.Value = 600;
+            reverseprog.Start();
+        }
+
+        private void aFKToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
         {
             if (aFKToolStripMenuItem.Checked)
             {
@@ -402,17 +438,17 @@ namespace Fluctus
             }
         }
 
-        private void skip_btn_Click(object sender, EventArgs e)
+        private void gamemodechecker_Tick(object sender, EventArgs e)
         {
-            //skipped = true;
-            in_Break = false;
-            break_Refresh();
-            timer.Start();
-            break_timer.Stop();
-            break_timer.Reset();
-            prog.Stop();
-            progressBar1.Value = 600;
-            reverseprog.Start();
+            if(checkprocess(0, false) && !aFKToolStripMenuItem.Checked)
+            {
+                aFKToolStripMenuItem.Checked = true;
+            }
+            else if(!checkprocess(0, false) && aFKToolStripMenuItem.Checked)
+            {
+                aFKToolStripMenuItem.Checked = false;
+            }
+            //aFKToolStripMenuItem.Checked = checkprocess(0, false);
         }
     }
 }
