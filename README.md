@@ -1,4 +1,4 @@
-# fluctus
+# Fluctus
 Make you take a break in periods of times recommended for IT people.
 ## More info about project soon...
 ## How to build project quick?
