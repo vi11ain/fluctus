@@ -1,1 +1,0 @@
-msbuild Fluctus.sln /p:Configuration=Release /p:Platform="Any CPU"
