@@ -1,7 +1,7 @@
 # Fluctus
 Make you take a break in periods of times recommended for IT people.
 ## More info about project soon...
-## How to build project quick?
-Replace red sentence with you'r msbuild.exe directory, should support .net framework 4.5.2
+## How to quickly build the project?
+Replace the red sentence in the build bat with your msbuild.exe directory (msbuild.exe should support .net framework 4.5.2)
 ![alt text](https://i.imgur.com/uo4QbnE.png)
-and run the .bat file to build (:
+(run the bat file to build as release for better performance over debug)
