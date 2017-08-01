@@ -74,13 +74,13 @@
             this.aboutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 136);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Image = global::Fluctus.Properties.Resources.open;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -88,25 +88,26 @@
             // 
             this.settingsToolStripMenuItem.Image = global::Fluctus.Properties.Resources.settings;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // aFKToolStripMenuItem
             // 
-            this.aFKToolStripMenuItem.BackColor = System.Drawing.Color.Red;
+            this.aFKToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.aFKToolStripMenuItem.CheckOnClick = true;
             this.aFKToolStripMenuItem.Image = global::Fluctus.Properties.Resources.off;
             this.aFKToolStripMenuItem.Name = "aFKToolStripMenuItem";
-            this.aFKToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.aFKToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aFKToolStripMenuItem.Text = "AFK";
             this.aFKToolStripMenuItem.CheckedChanged += new System.EventHandler(this.aFKToolStripMenuItem_CheckedChanged);
+            this.aFKToolStripMenuItem.Click += new System.EventHandler(this.aFKToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Image = global::Fluctus.Properties.Resources.about;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -114,7 +115,7 @@
             // 
             this.exitToolStripMenuItem.Image = global::Fluctus.Properties.Resources.exit;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 

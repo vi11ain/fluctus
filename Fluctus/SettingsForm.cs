@@ -32,11 +32,9 @@ namespace Fluctus
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
-            if (!Settings.Default.isprocesslistset)
+            if (Settings.Default.processlist==null)
             {
                 Settings.Default.processlist = new List<string>();
-                Settings.Default.isprocesslistset = true;
-                Settings.Default.Save();
             }
             refresh_Lang();
         }
@@ -56,13 +54,13 @@ namespace Fluctus
             update_No = MainForm.res_man.GetString("updateNo", MainForm.cul);
             update_Yes = MainForm.res_man.GetString("updateYes", MainForm.cul);
             update_Title = MainForm.res_man.GetString("updateTitle", MainForm.cul);
-            if (Settings.Default.Sound == "alarm")
+            if (Settings.Default.Sound == "relax")
             {
-                radioButton4.Select();
+                radioButton3.Select();
             }
             else
             {
-                radioButton3.Select();
+                radioButton4.Select();
             }
             forceontop.Checked = Settings.Default.forceontop;
             forcecenter.Checked = Settings.Default.forcecenter;
@@ -184,9 +182,11 @@ namespace Fluctus
         {
             if (!processlist.Text.Equals(""))
             {
+                Settings.Default.processlist.Clear();
                 foreach (var myString in processlist.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries))
                 {
-                    Settings.Default.processlist = new List<string>();
+                    //Settings.Default.processlist = new List<string>();
+                    
                     Settings.Default.processlist.Add(myString);
                     Settings.Default.Save();
                     //yourAction?.Invoke();

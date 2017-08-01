@@ -29,11 +29,11 @@
     <Setting Name="gamemode" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="isprocesslistset" Type="System.String" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
     <Setting Name="processlist" Type="System.Collections.Generic.List&lt;System.String&gt;" Scope="User">
       <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="isprocesslistset" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

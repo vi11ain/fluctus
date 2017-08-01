@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
 using System.Media;
+using System.Collections.Generic;
 
 namespace Fluctus
 {
@@ -31,6 +32,7 @@ namespace Fluctus
         //public static bool powersaving = Settings.Default.savepower;
         bool in_Break = false;
         bool break_Type;
+        bool trueafk = false;
         public static ResourceManager res_man = new ResourceManager("Fluctus.Lang.lang", Assembly.Load("Fluctus"));
         public static CultureInfo cul;
         public MainForm()
@@ -52,7 +54,6 @@ namespace Fluctus
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //statisticsEngine();
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
             PlaceLowerRight();
@@ -88,6 +89,7 @@ namespace Fluctus
             else if(!Settings.Default.gamemode && gamemodechecker.Enabled)
             {
                 gamemodechecker.Stop();
+                if(!trueafk)
                 aFKToolStripMenuItem.Checked = false;
 
             }
@@ -171,7 +173,7 @@ namespace Fluctus
 
         private bool checkprocess(int place, bool prev)
         {
-            if(place>= Settings.Default.processlist.Count)
+            if (place >= Settings.Default.processlist.Count)
             {
                 return prev;
             }
@@ -217,7 +219,7 @@ namespace Fluctus
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
                 this.CenterToScreen();
-                if (Settings.Default.Sound == "relaxing")
+                if (Settings.Default.Sound == "relax")
                 {
                     snd.Play();
                 }
@@ -245,7 +247,7 @@ namespace Fluctus
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
                 this.CenterToScreen();
-                if (Settings.Default.Sound == "relaxing")
+                if (Settings.Default.Sound == "relax")
                 {
                     snd.Play();
                 }
@@ -431,7 +433,7 @@ namespace Fluctus
             }
             else
             {
-                aFKToolStripMenuItem.BackColor = Color.Red;
+                aFKToolStripMenuItem.BackColor = SystemColors.Control;
                 aFKToolStripMenuItem.Image = Fluctus.Properties.Resources.off;
                 timer.Start();
                 counter.Start();
@@ -444,11 +446,16 @@ namespace Fluctus
             {
                 aFKToolStripMenuItem.Checked = true;
             }
-            else if(!checkprocess(0, false) && aFKToolStripMenuItem.Checked)
+            else if(!checkprocess(0, false) && aFKToolStripMenuItem.Checked && !trueafk)
             {
                 aFKToolStripMenuItem.Checked = false;
             }
             //aFKToolStripMenuItem.Checked = checkprocess(0, false);
+        }
+
+        private void aFKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            trueafk = !trueafk;
         }
     }
 }

@@ -59,7 +59,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.gamemodeenable = new System.Windows.Forms.CheckBox();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -513,6 +512,5 @@
         private System.Windows.Forms.CheckBox gamemodeenable;
         private System.Windows.Forms.Button savelistbtn;
         private System.Windows.Forms.TextBox processlist;
-        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }

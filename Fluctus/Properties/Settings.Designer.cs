@@ -133,24 +133,24 @@ namespace Fluctus.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public string isprocesslistset {
+            get {
+                return ((string)(this["isprocesslistset"]));
+            }
+            set {
+                this["isprocesslistset"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::System.Collections.Generic.List<System.String> processlist {
             get {
                 return ((global::System.Collections.Generic.List<System.String>)(this["processlist"]));
             }
             set {
                 this["processlist"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool isprocesslistset {
-            get {
-                return ((bool)(this["isprocesslistset"]));
-            }
-            set {
-                this["isprocesslistset"] = value;
             }
         }
     }
