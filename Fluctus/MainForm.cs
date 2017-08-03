@@ -77,7 +77,7 @@ namespace Fluctus
             aboutToolStripMenuItem.Text = res_man.GetString("contextAbout", cul);
             settingsToolStripMenuItem.Text = res_man.GetString("contextSettings", cul);
             exitToolStripMenuItem.Text = res_man.GetString("contextExit", cul);
-            if (Settings.Default.Sound == "relaxing")
+            if (Settings.Default.Sound == "relax")
             {
                 str = Properties.Resources.relaxing;
                 snd = new System.Media.SoundPlayer(str);
