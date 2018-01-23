@@ -1,3 +1,4 @@
+## This project is off development because of insufficient code, I learned alot since starting this project and I'm no longer going to update it because of it's spaghetti code, but is still useable and stable in latest version. I have a replacement for it in development, but it's kinda low in my list of priorities because of school & other projects. You'll just have to wait and see (;
 # Fluctus
 Make you take a break in periods of times recommended for IT people.
 ## More info about project soon...
